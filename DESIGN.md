@@ -340,11 +340,28 @@ Nunca crear clientes ficticios que parezcan reales.
 
 Cuando lleguen:
 
-- franja o grid compacto;
-- sin card por logo;
-- sin carrusel pesado;
+- usar los logos reales normalizados;
 - respetar proporciones;
 - sólo marcas autorizadas.
+
+### Patrón aprobado de carrusel móvil
+
+En móvil, las marcas se presentan mediante un carrusel horizontal ligero:
+
+- scroll lateral nativo;
+- `scroll-snap-type: x mandatory`;
+- una marca central nítida;
+- marca anterior y siguiente parcialmente visibles;
+- laterales con opacidad menor, escala ligera y blur muy suave;
+- sin autoplay;
+- swipe/touch nativo;
+- botones anterior/siguiente de al menos 44×44 CSS px;
+- navegación por teclado;
+- `overscroll-behavior-x: contain`;
+- WebP 1:1 optimizados;
+- no librería de carrusel salvo necesidad demostrada.
+
+En desktop el carrusel puede ocultarse temporalmente durante la fase de congelamiento de desktop; su adaptación final se decidirá en la auditoría posterior.
 
 Abogado + marcas forman una sola macrosección, no dos pantallas.
 
