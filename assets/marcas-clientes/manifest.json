@@ -1,0 +1,24 @@
+{
+  "title": "MarqSafe - Logos de marcas/clientes",
+  "purpose": "Carrusel de prueba social en Home",
+  "format": "webp",
+  "canvas": "800x800",
+  "aspect_ratio": "1:1",
+  "background": "neutral claro",
+  "items": [
+    {"id": 1, "file": "01-smash-burger.webp", "brand": "Smash Burger"},
+    {"id": 2, "file": "02-dra-lu-ortega.webp", "brand": "Dra. Lu Ortega"},
+    {"id": 3, "file": "03-doormex.webp", "brand": "Doormex"},
+    {"id": 4, "file": "04-financia-business-group.webp", "brand": "Financia Business Group"},
+    {"id": 5, "file": "05-lunika.webp", "brand": "Lunika"},
+    {"id": 6, "file": "06-yaba-soluciones-integrales.webp", "brand": "Yaba Soluciones Integrales"},
+    {"id": 7, "file": "07-mototoy-garage.webp", "brand": "Mototoy Garage"},
+    {"id": 8, "file": "08-lunhara-natural-camping.webp", "brand": "Lunhara Natural Camping"},
+    {"id": 9, "file": "09-lunya.webp", "brand": "Lunya"},
+    {"id": 10, "file": "10-turenta-mx.webp", "brand": "TuRenta.mx"},
+    {"id": 11, "file": "11-firma-mx-bienes-raices.webp", "brand": "Firma MX Bienes Raices"},
+    {"id": 12, "file": "12-perezchica.webp", "brand": "PerezChica"},
+    {"id": 13, "file": "13-pumped-bars-and-booth.webp", "brand": "Pumped - Bars and Booth"}
+  ],
+  "production_note": "Confirmar autorizacion para exhibicion publica de cada marca antes de produccion."
+}
