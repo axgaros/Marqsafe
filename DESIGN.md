@@ -2,8 +2,8 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 28 de octubre de 2026  
-**Base vigente:** v48  
-**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
+**Base vigente:** v49  
+**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
 ## Arquitectura Home
 
@@ -16,13 +16,13 @@
 
 `Cómo funciona el registro` vive en `registro.html`, no en Home.
 
-## Hero
+## Hero Home
 
 Desktop permanece congelado. Mobile conserva el expediente como recurso visual de fondo, precio visible y CTA principal.
 
 ## Confianza — aprobado v46
 
-La sección usa contenido real/profesional para aprovechar el ancho; no añadir adornos para rellenar huecos.
+La sección usa contenido profesional real para aprovechar el ancho; no adornos agregados para rellenar huecos.
 
 Entrada:
 
@@ -30,39 +30,19 @@ Entrada:
 - H2: **Atención legal directa para proteger tu marca**
 - frase: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
 
-### Perfil
-
 Desktop usa tres zonas:
 
-1. **Foto profesional** con marco visual doble muy fino (navy + dorado), sin card pesada.
-2. **Nombre + rol + bio + CTA WhatsApp**.
-3. **Información profesional verificable**.
+1. Foto profesional con marco visual doble fino navy + dorado.
+2. Nombre + rol + bio + CTA WhatsApp.
+3. Información profesional verificable.
 
-Información a solicitar al abogado:
+Solicitar al abogado nombre, fotografía, formación/universidad, diplomados o especialización, experiencia relevante, experiencia relacionada con IMPI/marcas, cédula sólo si desea publicarla y perfiles profesionales si desea mostrarlos.
 
-- nombre completo como desea aparecer públicamente;
-- fotografía profesional;
-- formación académica y universidad;
-- diplomados, especialización, cursos o certificaciones relevantes;
-- experiencia profesional relevante;
-- experiencia relacionada con IMPI / marcas, sólo como él autorice expresarla;
-- cédula profesional, únicamente si desea publicarla;
-- perfiles profesionales/enlaces, si desea mostrarlos.
+Mientras falten datos usar **Pendiente de información**. Nunca inventar credenciales.
 
-Mientras falten datos, usar placeholders explícitos **Pendiente de información**. Nunca inventar universidad, diplomados, años de experiencia, cédula, especialidad ni credenciales.
+Mobile: intro → foto → nombre/bio/CTA → información profesional → marcas.
 
-### Mobile
-
-Mantener lectura vertical: intro → foto → nombre/bio/CTA → información profesional en filas compactas → marcas.
-
-### Recursos descartados
-
-No reintroducir en esta sección sin nueva aprobación:
-
-- wordmark gigante MARQ/SAFE de v44;
-- MQ animado de v45;
-- silueta de abogado;
-- copy adicional inventado sólo para llenar espacio.
+No reintroducir sin nueva aprobación: wordmark gigante v44, MQ animado v45, silueta de abogado ni copy inventado para llenar espacio.
 
 ## Carrusel de marcas
 
@@ -71,16 +51,14 @@ Conservar patrón v41:
 - 13 imágenes fuente una sola vez;
 - 5 slots visuales reciclados por JS;
 - loop circular 13→1 y 1→13;
-- sin autoplay;
-- sin numeración;
-- swipe/touch;
-- teclado;
+- sin autoplay ni numeración;
+- swipe/touch y teclado;
 - chevrons limpios;
 - marca central nítida y vecinas atenuadas.
 
 Título: **Marcas con las que hemos trabajado**.
 
-Antes de producción confirmar autorización para exhibir públicamente cada logo.
+Antes de producción confirmar autorización pública de cada logo.
 
 ## SEO / CRO / WordPress
 
@@ -90,18 +68,26 @@ Antes de producción confirmar autorización para exhibir públicamente cada log
 - WhatsApp como conversión principal;
 - no inventar prueba social ni credenciales;
 - futuro port a Gutenberg debe mantener contenido editable sin exponer CSS/JS crítico;
-- datos repetidos (como precios) deben tener una sola fuente de verdad.
+- precios repetidos deben tener una sola fuente de verdad.
 
-## Heroes de servicios — desktop v48
+## Heroes de servicios — desktop v48/v49
 
-En escritorio, las páginas de servicio compartidas deben quedar visualmente cerca del header, sin pegarse ni parecer cortadas.
+Las páginas de servicios deben sentirse cercanas al header y terminar limpiamente antes de la siguiente sección.
 
-- `Búsqueda y viabilidad`, `Oficios y requerimientos`, `Declaración de uso`, `Renovación de marca` y `Aviso comercial`: **14 px de separación visual** entre el header y el inicio del rectángulo principal;
-- eliminar el hueco excesivo introducido en v47;
-- no permitir que el borde superior, eyebrow o H1 parezcan ocultos bajo la navegación;
-- aplicar únicamente desde 1051px; móvil y tablet conservan su reflow;
-- `Registro de marca` mantiene su hero especial;
-- el eyebrow de Registro debe ser **REGISTRO DE MARCA** y usar exactamente el mismo sistema visual de los demás servicios en desktop: color `#9a6e2e`, `font-weight: 800`, tamaño `clamp(.88rem,1.05vw,1.02rem)`, tracking `.13em` y líneas laterales de 48px × 2px.
+### Inicio del hero
+
+- `Búsqueda y viabilidad`, `Oficios y requerimientos`, `Declaración de uso`, `Renovación de marca` y `Aviso comercial`: mantener aprox. **14 px** de separación visual entre el header y el inicio del bloque principal;
+- no pegar el rectángulo al header ni dejar una franja vacía grande;
+- `Registro de marca` conserva su hero especial y su eyebrow **REGISTRO DE MARCA** debe usar el mismo sistema visual dorado que los demás servicios.
+
+### Final del hero — regla v49
+
+- eliminar la línea divisoria (`border-bottom`) visible al final de todos los heroes de servicio en desktop;
+- después de los heroes compartidos, la siguiente sección comienza con **28 px** de separación superior;
+- usar la misma transición en Viabilidad, Oficios, Declaración, Renovación y Aviso comercial para evitar que una quede pegada y otra demasiado separada;
+- Registro conserva su composición especial, pero la tarjeta principal debe mostrar completo su borde superior: `registration-stage` con **22 px** de aire superior + `reg-main-card` con **8 px** de margen superior;
+- después del hero de Registro, la siguiente sección inicia con **32 px**;
+- estas reglas aplican sólo en desktop (`min-width:1051px`); móvil y tablet no cambian.
 
 ## Performance / accesibilidad
 
