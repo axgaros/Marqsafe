@@ -2,7 +2,7 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 27 de octubre de 2026  
-**Base vigente:** v44  
+**Base vigente:** v45  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 **Desktop:** hero congelado; las secciones posteriores sí siguen la arquitectura aprobada.
 
@@ -55,7 +55,7 @@ Esta macrosección debe contar una sola historia: **quién está detrás → qu�
 
 Orden obligatorio:
 
-1. eyebrow pequeño: **QUIÉN ESTÁ DETRÁS DE MARQSAFE**
+1. eyebrow pequeño: **CONFIANZA Y ACOMPAÑAMIENTO**
 2. H2: **Atención legal directa para proteger tu marca**
 3. frase única: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
 4. foto + identidad profesional
@@ -64,7 +64,6 @@ Orden obligatorio:
 
 Eliminar y no reintroducir:
 
-- `CONFIANZA Y ACOMPAÑAMIENTO`
 - `PERFIL PROFESIONAL`
 - `Atención directa, sin intermediarios`
 - `EXPERIENCIA APLICADA`
@@ -91,22 +90,22 @@ No convertir Confianza en un segundo hero. Entrada lineal, compacta y alineada a
 
 Conservar lectura vertical: entrada → foto → identidad/bio → CTA → marcas.
 
-### Recurso tipográfico de fondo — aprobado v44
+### Recurso MQ dibujado — aprobado v45
 
-Usar **MARQ / SAFE** en tipografía gigante como watermark editorial dentro de la macrosección de Confianza.
+Para aprovechar el espacio derecho de la sección de Confianza sin añadir más copy ni repetir el expediente, usar el **isotipo MQ reinterpretado como trazos SVG**.
 
 Reglas:
 
-- no cambia el layout aprobado; vive en una capa `aria-hidden` detrás del contenido;
-- no sustituye al logo ni funciona como texto informativo;
-- desktop: ocupar el tercio derecho como presencia visual tenue;
-- mobile: aparecer detrás de la composición actual sin mover foto, copy, CTA ni carrusel;
-- opacidad muy baja para no reducir legibilidad;
-- puede incluir una sola línea diagonal dorada como acento;
-- desktop: entrada suave al aparecer la sección y drift de reposo de sólo unos pocos píxeles;
-- no autoplay llamativo, rotaciones, rebotes ni movimiento continuo perceptible;
-- `prefers-reduced-motion`: sin animación;
-- este recurso reemplaza la necesidad de llenar el hueco con más copy o repetir el expediente.
+- desktop: ocupa el tercer bloque visual a la derecha del perfil;
+- la M, la Q y el acento dorado se dibujan progresivamente al entrar la sección;
+- animación una sola vez mediante `stroke-dasharray` / `stroke-dashoffset`;
+- después queda estático;
+- no usar el wordmark `MARQSAFE` gigante;
+- no usar silueta de abogado;
+- no añadir copy para llenar espacio;
+- mobile: el MQ vive detrás del layout ya aprobado y no cambia su flujo;
+- `prefers-reduced-motion`: mostrar el MQ completo sin animación;
+- el recurso es decorativo (`aria-hidden`) y no sustituye contenido ni logo funcional.
 
 ## 7. Carrusel de marcas — aprobado v41
 
