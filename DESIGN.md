@@ -2,29 +2,10 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 27 de octubre de 2026  
-**Base vigente:** v45  
-**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
-**Desktop:** hero congelado; las secciones posteriores sí siguen la arquitectura aprobada.
+**Base vigente:** v46  
+**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
-## 1. Principios permanentes
-
-MarqSafe debe sentirse clara, profesional, cercana, ordenada, ligera y confiable. No debe parecer SaaS genérico, plantilla de IA, despacho antiguo ni una web hecha de cards repetidas.
-
-“Más aire” = mejor agrupación, menos competencia visual y padding útil; **no** secciones gigantes ni `100vh`.
-
-SEO, CRO, rendimiento, accesibilidad y futura editabilidad en WordPress se consideran durante el diseño, no al final.
-
-## 2. Referencia visual
-
-EasyLex móvil es referencia para ritmo, densidad, jerarquía, cards, pricing, CTA y uso de recursos visuales. No copiar assets, textos, testimonios, estadísticas, colores, curvas ni layout pixel por pixel.
-
-## 3. Firma visual
-
-El recurso propio de MarqSafe es el **expediente/documento de marca**, preferentemente SVG ligero. Puede mostrar MARCA, CLASE, ESTADO, folio, solicitud, sello/check y requerimiento sin reproducir un documento oficial del IMPI.
-
-En hero móvil debe verse realmente como fondo del costado derecho, con fade hacia el copy. No esconderlo en una esquina ni dejar que compita con H1, precio y CTA.
-
-## 4. Arquitectura Home
+## Arquitectura Home
 
 1. Hero.
 2. Confianza: abogado + marcas.
@@ -35,166 +16,88 @@ En hero móvil debe verse realmente como fondo del costado derecho, con fade hac
 
 `Cómo funciona el registro` vive en `registro.html`, no en Home.
 
-## 5. Hero
+## Hero
 
-Mantener:
+Desktop permanece congelado. Mobile conserva el expediente como recurso visual de fondo, precio visible y CTA principal.
 
-- **TU MARCA, EN BUENAS MANOS**
-- **Registra tu marca ante el IMPI**
-- descripción actual
-- **Registro desde $6,500 MXN por clase y marca · derechos del IMPI incluidos**
-- CTA principal **Quiero registrar mi marca**
-- CTA secundario **Ver paquetes**
+## Confianza — aprobado v46
 
-Mobile: expediente visible de fondo y hero compacto.  
-Desktop: hero actual congelado.
+La sección debe aprovechar el ancho con **información profesional real**, no con decoración agregada sólo para rellenar espacio.
 
-## 6. Confianza — estructura aprobada v43
+Entrada:
 
-Esta macrosección debe contar una sola historia: **quién está detrás → qué aporta → persona real → prueba social**.
-
-Orden obligatorio:
-
-1. eyebrow pequeño: **CONFIANZA Y ACOMPAÑAMIENTO**
-2. H2: **Atención legal directa para proteger tu marca**
-3. frase única: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
-4. foto + identidad profesional
-5. CTA **Hablar por WhatsApp**
-6. **Marcas con las que hemos trabajado** + carrusel
-
-Eliminar y no reintroducir:
-
-- `PERFIL PROFESIONAL`
-- `Atención directa, sin intermediarios`
-- `EXPERIENCIA APLICADA`
-- frases adicionales que vuelvan a repetir “te atiende un abogado”.
+- eyebrow: **CONFIANZA Y ACOMPAÑAMIENTO**
+- H2: **Atención legal directa para proteger tu marca**
+- frase: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
 
 ### Perfil del abogado
 
-Cuando el cliente entregue información real, mostrar:
+En desktop usar tres zonas:
 
-- foto
-- nombre
-- cargo/especialidad autorizada
-- bio de 2–3 líneas
-- 2–3 datos profesionales reales sólo si aportan confianza
-- CTA WhatsApp
+1. **Foto profesional** con marco visual doble fino navy + dorado.
+2. **Nombre + rol + bio + CTA WhatsApp**.
+3. **Información profesional verificable**.
 
-Mientras falten datos: placeholder explícito de foto + **Nombre del abogado** + **Información profesional pendiente**. Nunca stock lawyer ni credenciales inventadas.
+Solicitar al abogado:
 
-### Desktop
+- nombre completo como desea aparecer públicamente;
+- fotografía profesional;
+- formación académica y universidad;
+- diplomados, especialización, cursos o certificaciones relevantes;
+- experiencia profesional relevante;
+- experiencia relacionada con IMPI / marcas, únicamente como él autorice expresarla;
+- cédula profesional, sólo si desea publicarla;
+- perfiles profesionales/enlaces, si desea mostrarlos.
 
-No convertir Confianza en un segundo hero. Entrada lineal, compacta y alineada a la izquierda: eyebrow → H2 moderado → frase → perfil. Evitar el layout v42 con título aislado a la izquierda y copy lejano a la derecha si genera huecos. Foto aprox. 220–260 px.
+Mientras falten datos, usar placeholders explícitos **Pendiente de información**. Nunca inventar universidad, diplomados, años de experiencia, cédula, especialidad ni credenciales.
 
 ### Mobile
 
-Conservar lectura vertical: entrada → foto → identidad/bio → CTA → marcas.
+Orden vertical:
 
-### Recurso MQ dibujado — aprobado v45
+intro → foto → nombre/bio/CTA → información profesional en filas compactas → marcas.
 
-Para aprovechar el espacio derecho de la sección de Confianza sin añadir más copy ni repetir el expediente, usar el **isotipo MQ reinterpretado como trazos SVG**.
+### Recursos descartados
 
-Reglas:
+No reintroducir en esta sección sin nueva aprobación:
 
-- desktop: ocupa el tercer bloque visual a la derecha del perfil;
-- la M, la Q y el acento dorado se dibujan progresivamente al entrar la sección;
-- animación una sola vez mediante `stroke-dasharray` / `stroke-dashoffset`;
-- después queda estático;
-- no usar el wordmark `MARQSAFE` gigante;
-- no usar silueta de abogado;
-- no añadir copy para llenar espacio;
-- mobile: el MQ vive detrás del layout ya aprobado y no cambia su flujo;
-- `prefers-reduced-motion`: mostrar el MQ completo sin animación;
-- el recurso es decorativo (`aria-hidden`) y no sustituye contenido ni logo funcional.
+- wordmark gigante MARQ/SAFE de v44;
+- MQ animado de v45;
+- silueta de abogado;
+- copy inventado únicamente para llenar espacio.
 
-## 7. Carrusel de marcas — aprobado v41
+## Carrusel de marcas
 
-Conservar sin cambios funcionales:
+Conservar patrón v41:
 
-- 13 imágenes reales una sola vez como fuente
-- 5 slots visuales reciclados por JS
-- anterior 2 / anterior / actual / siguiente / siguiente 2
-- loop circular 13→1 y 1→13 sin clones masivos ni salto de scroll
-- marca central nítida
-- vecinas con menor opacidad, escala y blur suave
-- sin autoplay
-- sin numeración
-- swipe/touch
-- teclado
-- chevrons limpios sin círculo
-- target táctil mínimo 44×44 px
-- focus visible
+- 13 imágenes fuente una sola vez;
+- 5 slots visuales reciclados por JS;
+- loop circular 13→1 y 1→13;
+- sin autoplay;
+- sin numeración;
+- swipe/touch;
+- teclado;
+- chevrons limpios;
+- marca central nítida y vecinas atenuadas.
 
-Título: **Marcas con las que hemos trabajado**. Sin kicker adicional.
+Título: **Marcas con las que hemos trabajado**.
 
-Logos WebP 1:1 desde `assets/marcas-clientes/`. Confirmar autorización pública antes de producción.
+Antes de producción confirmar autorización para exhibir públicamente cada logo.
 
-### WordPress
+## SEO / CRO / WordPress
 
-Las imágenes podrán venir de Media Library/Gallery. CSS global controla el aspecto y JS global el loop. No repetir scripts por página; cargar JS desde theme/plugin (`wp_enqueue_script()` o equivalente).
+- un H1 único;
+- jerarquía semántica;
+- contenido real rastreable;
+- WhatsApp como conversión principal;
+- no inventar prueba social ni credenciales;
+- futuro port a Gutenberg debe mantener contenido editable sin exponer CSS/JS crítico;
+- datos repetidos como precios deben tener una sola fuente de verdad.
 
-## 8. Paquetes + otros servicios
+## Performance / accesibilidad
 
-Paquetes principales: Búsqueda, Registro, Protección Total. Aquí sí se justifican cards por comparación comercial. Registro debe destacar como **Más elegido**.
+Priorizar SVG/WebP, JS pequeño, focus visible, teclado, contraste, targets táctiles cómodos y `prefers-reduced-motion`. Objetivos: LCP ≤2.5 s, INP ≤200 ms, CLS ≤0.1 y WCAG 2.2 AA donde aplique.
 
-Otros servicios deben vivir dentro de la misma macrosección como filas compactas, no otra gran sección.
+## Gate final
 
-## 9. Por qué registrar + por qué MarqSafe
-
-Una macrosección con dos capítulos distintos visualmente.
-
-**Por qué registrar:** uso exclusivo, identidad defendible, activo del negocio. No tres cards independientes.
-
-**Por qué MarqSafe:** abogado por WhatsApp, precios claros, derechos IMPI incluidos, atención en todo México. No cuatro cards idénticas.
-
-## 10. Oficio
-
-Mantener como callout independiente y compacto por intención distinta: documento/requerimiento SVG + texto corto + CTA contextual.
-
-## 11. FAQ + CTA
-
-Home: máximo 3–4 preguntas, accordion con divisores, sin card por pregunta. CTA final dentro del mismo bloque de cierre.
-
-## 12. Sistema visual
-
-- blanco/off-white dominante
-- navy/deep blue + muted gold como acentos
-- superficies grandes 24–28 px de radio
-- cards 20–24 px
-- mobile padding lateral ~20 px
-- evitar masas oscuras grandes sin razón
-- Agency sólo si existe licencia web/comercial válida; no redistribuir fuente
-
-## 13. Motion
-
-CSS → SVG → JS vanilla pequeño → librería sólo si se demuestra necesaria. Preferir `transform` y `opacity`. `prefers-reduced-motion` obligatorio. Sin scroll-jacking, parallax fuerte, 3D, WebGL ni video pesado.
-
-## 14. SEO / CRO
-
-Preservar H1 único, jerarquía H2/H3, contenido rastreable, enlaces descriptivos, intención de búsqueda, alt text y arquitectura multipágina.
-
-WhatsApp es conversión principal. Precios y “Derechos del IMPI incluidos” deben seguir visibles. No inventar métricas, clientes, testimonios, garantías ni urgencia.
-
-## 15. WordPress / Gutenberg
-
-Priorizar core blocks, Patterns, Synced Patterns cuando convenga, content-only editing, locking, `theme.json`, Global Styles, CSS global y SVG propios. Custom HTML sólo para estructuras especiales. El cliente debe editar contenido habitual sin tocar CSS/JS/layout crítico.
-
-Precio repetido = una sola fuente de verdad; evaluar Block Bindings, custom fields, Synced Patterns o custom block ligero.
-
-## 16. Performance / accesibilidad
-
-Objetivos: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1 y WCAG 2.2 AA donde aplique. Priorizar SVG/WebP, JS pequeño, focus visible, teclado, contraste, touch targets cómodos y reduced motion.
-
-## 17. Anti AI-slop
-
-Evitar hero SaaS genérico, cards para todo, pills everywhere, glow, glassmorphism gratuito, blobs, fake stats, iconos genéricos repetidos y fade-up idéntico en todas partes.
-
-Pregunta obligatoria: **¿Por qué esta decisión pertenece específicamente a MarqSafe?**
-
-## 18. Gate final
-
-Antes de aprobar una sección:
-
-> ¿Ayuda a entender, confiar, decidir o actuar; respira sin desperdiciar pantalla; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible en WordPress?
-
-Si alguna respuesta es no, todavía no está lista.
+> ¿Ayuda a entender, confiar, decidir o actuar; usa el espacio sin rellenarlo artificialmente; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible en WordPress?
