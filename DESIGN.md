@@ -1,8 +1,8 @@
 # DESIGN.md — MarqSafe
 
 **Estado:** contrato visual activo  
-**Última actualización:** 28 de octubre de 2026  
-**Base vigente:** v50  
+**Última actualización:** 27 de octubre de 2026  
+**Base vigente:** v51  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 
 ## Arquitectura Home
@@ -102,6 +102,14 @@ En escritorio, las páginas de servicio deben dejar una separación segura entre
 - los nombres visibles de servicio deben ser consistentes: Registro de marca, Búsqueda y viabilidad, Oficios y requerimientos, Declaración de uso, Renovación de marca y Aviso comercial;
 - en Registro, el eyebrow aprobado es **REGISTRO DE MARCA**, no “TU MARCA, EN BUENAS MANOS”.
 
+## Performance / accesibilidad
+
+Priorizar SVG/WebP, JS pequeño, focus visible, teclado, contraste, targets táctiles cómodos y `prefers-reduced-motion`. Objetivos: LCP ≤2.5 s, INP ≤200 ms, CLS ≤0.1 y WCAG 2.2 AA donde aplique.
+
+## Gate final
+
+> ¿Ayuda a entender, confiar, decidir o actuar; usa el espacio sin rellenarlo artificialmente; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible en WordPress?
+
 ## Heroes de servicios — desktop v48
 
 En escritorio:
@@ -130,10 +138,13 @@ Desktop únicamente:
 - No modificar los otros servicios, ya aprobados en v49.
 - Móvil/tablet no cambian.
 
-## Performance / accesibilidad
+## Declaración de uso — compactación v51
 
-Priorizar SVG/WebP, JS pequeño, focus visible, teclado, contraste, targets táctiles cómodos y `prefers-reduced-motion`. Objetivos: LCP ≤2.5 s, INP ≤200 ms, CLS ≤0.1 y WCAG 2.2 AA donde aplique.
+Desktop únicamente:
 
-## Gate final
-
-> ¿Ayuda a entender, confiar, decidir o actuar; usa el espacio sin rellenarlo artificialmente; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible en WordPress?
+- no agrandar más el hero para hacer caber contenido;
+- eliminar los mini-bloques laterales `Cumplimiento a tiempo` y `Marca vigente`;
+- mantener en el hero sólo tres beneficios compactos: `Revisión del registro`, `Fecha aplicable` y `Presentación`;
+- no repetir las descripciones largas porque la sección siguiente ya desarrolla esos pasos;
+- subir los CTA dentro de la tarjeta y garantizar que ambos botones queden completos;
+- los demás servicios permanecen sin cambios.
