@@ -1,8 +1,8 @@
 # DESIGN.md — MarqSafe
 
 **Estado:** contrato visual activo  
-**Última actualización:** 27 de octubre de 2026  
-**Base vigente:** v47  
+**Última actualización:** 28 de octubre de 2026  
+**Base vigente:** v48  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 
 ## Arquitectura Home
@@ -92,15 +92,16 @@ Antes de producción confirmar autorización para exhibir públicamente cada log
 - futuro port a Gutenberg debe mantener contenido editable sin exponer CSS/JS crítico;
 - datos repetidos (como precios) deben tener una sola fuente de verdad.
 
-## Heroes de servicios — corrección desktop v47
+## Heroes de servicios — desktop v48
 
-En escritorio, las páginas de servicio deben dejar una separación segura entre el header sticky y la tarjeta principal del hero.
+En escritorio, las páginas de servicio compartidas deben quedar visualmente cerca del header, sin pegarse ni parecer cortadas.
 
-- no permitir que el borde superior, eyebrow o título parezcan ocultos bajo la navegación;
-- aplicar el ajuste sólo desde 1051px;
-- móvil conserva su reflow actual;
-- los nombres visibles de servicio deben ser consistentes: Registro de marca, Búsqueda y viabilidad, Oficios y requerimientos, Declaración de uso, Renovación de marca y Aviso comercial;
-- en Registro, el eyebrow aprobado es **REGISTRO DE MARCA**, no “TU MARCA, EN BUENAS MANOS”.
+- `Búsqueda y viabilidad`, `Oficios y requerimientos`, `Declaración de uso`, `Renovación de marca` y `Aviso comercial`: **14 px de separación visual** entre el header y el inicio del rectángulo principal;
+- eliminar el hueco excesivo introducido en v47;
+- no permitir que el borde superior, eyebrow o H1 parezcan ocultos bajo la navegación;
+- aplicar únicamente desde 1051px; móvil y tablet conservan su reflow;
+- `Registro de marca` mantiene su hero especial;
+- el eyebrow de Registro debe ser **REGISTRO DE MARCA** y usar exactamente el mismo sistema visual de los demás servicios en desktop: color `#9a6e2e`, `font-weight: 800`, tamaño `clamp(.88rem,1.05vw,1.02rem)`, tracking `.13em` y líneas laterales de 48px × 2px.
 
 ## Performance / accesibilidad
 
