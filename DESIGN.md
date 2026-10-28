@@ -2,7 +2,7 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 27 de octubre de 2026  
-**Base vigente:** v43  
+**Base vigente:** v44  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 **Desktop:** hero congelado; las secciones posteriores sí siguen la arquitectura aprobada.
 
@@ -90,6 +90,23 @@ No convertir Confianza en un segundo hero. Entrada lineal, compacta y alineada a
 ### Mobile
 
 Conservar lectura vertical: entrada → foto → identidad/bio → CTA → marcas.
+
+### Recurso tipográfico de fondo — aprobado v44
+
+Usar **MARQ / SAFE** en tipografía gigante como watermark editorial dentro de la macrosección de Confianza.
+
+Reglas:
+
+- no cambia el layout aprobado; vive en una capa `aria-hidden` detrás del contenido;
+- no sustituye al logo ni funciona como texto informativo;
+- desktop: ocupar el tercio derecho como presencia visual tenue;
+- mobile: aparecer detrás de la composición actual sin mover foto, copy, CTA ni carrusel;
+- opacidad muy baja para no reducir legibilidad;
+- puede incluir una sola línea diagonal dorada como acento;
+- desktop: entrada suave al aparecer la sección y drift de reposo de sólo unos pocos píxeles;
+- no autoplay llamativo, rotaciones, rebotes ni movimiento continuo perceptible;
+- `prefers-reduced-motion`: sin animación;
+- este recurso reemplaza la necesidad de llenar el hueco con más copy o repetir el expediente.
 
 ## 7. Carrusel de marcas — aprobado v41
 
