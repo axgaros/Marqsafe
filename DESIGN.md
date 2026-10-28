@@ -1,8 +1,8 @@
 # DESIGN.md — MarqSafe
 
 **Estado:** contrato visual activo  
-**Última actualización:** 27 de octubre de 2026  
-**Base vigente:** v51  
+**Última actualización:** 28 de octubre de 2026  
+**Base vigente:** v52  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 
 ## Arquitectura Home
@@ -148,3 +148,36 @@ Desktop únicamente:
 - no repetir las descripciones largas porque la sección siguiente ya desarrolla esos pasos;
 - subir los CTA dentro de la tarjeta y garantizar que ambos botones queden completos;
 - los demás servicios permanecen sin cambios.
+
+## Sistema de rutas para servicios — v52
+
+La segunda sección de las seis páginas de servicio deja de usar el patrón repetido de **título grande + tres cards** y pasa a una ruta visual continua.
+
+### Gramática visual
+
+- tres estaciones por página;
+- un solo camino continuo de izquierda → derecha → izquierda en desktop;
+- curvas amplias y suaves, no codos rígidos;
+- pista base clara de 12px y trazo activo navy de 9px;
+- el trazo activo se rellena progresivamente conforme el usuario hace scroll;
+- cada estación se activa en dorado cuando el recorrido la alcanza;
+- sin GSAP, WebGL, canvas ni librerías de motion: SVG + JS vanilla pequeño;
+- `prefers-reduced-motion`: ruta completa y estaciones visibles sin animación;
+- en móvil, la misma lógica se vuelve más vertical manteniendo alternancia izquierda → derecha → izquierda;
+- cada servicio usa una trayectoria ligeramente distinta, pero conserva la misma gramática.
+
+### Contenido por servicio
+
+- Registro: **Búsqueda previa → Clasificación → Seguimiento**.
+- Viabilidad: **Nombre de la marca → Productos o servicios → Dictamen de viabilidad**.
+- Oficios: **Oficio recibido → Contexto del expediente → Contestación**.
+- Declaración: **Identifica el registro → Revisa la fecha → Presentación**.
+- Renovación: **Ubica tu registro → Revisa la ventana → Renovación**.
+- Aviso comercial: **Define el aviso → Relaciona el uso → Presentación**.
+
+### Ritmo
+
+- no convertir estas rutas en secciones gigantes;
+- el camino es el recurso gráfico principal, por lo que no se añaden cards ni iconos genéricos;
+- en servicios con hero compartido, conservar aproximadamente 28px entre el final del hero y el inicio de la ruta;
+- textos breves y trazables a la información ya existente en cada página.
