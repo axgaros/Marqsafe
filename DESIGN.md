@@ -2,7 +2,7 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 28 de octubre de 2026  
-**Base vigente:** v52  
+**Base vigente:** v53  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 
 ## Arquitectura Home
@@ -181,3 +181,16 @@ La segunda sección de las seis páginas de servicio deja de usar el patrón rep
 - el camino es el recurso gráfico principal, por lo que no se añaden cards ni iconos genéricos;
 - en servicios con hero compartido, conservar aproximadamente 28px entre el final del hero y el inicio de la ruta;
 - textos breves y trazables a la información ya existente en cada página.
+
+## Ruta de servicios — v53
+
+La segunda sección de las páginas de servicio usa un recorrido de tres estaciones con geometría simétrica y más vertical.
+
+- 01 arriba a la izquierda; 02 al centro a la derecha; 03 abajo a la izquierda.
+- El descenso y curva 01→02 debe ser visualmente espejo del tramo 02→03.
+- Curvas amplias y redondeadas; evitar formas libres o ambiguas.
+- Línea base gruesa y tenue; progreso navy encima ligado al scroll.
+- Los puntos se activan en dorado conforme llega el recorrido.
+- Sin cards; el propio camino organiza la información.
+- Desktop y mobile conservan la misma lógica de alternancia y simetría, con mobile más vertical.
+- Mantener SVG + JS vanilla y `prefers-reduced-motion`; sin librerías de animación.
