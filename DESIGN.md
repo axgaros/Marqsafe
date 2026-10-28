@@ -2,8 +2,8 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 27 de octubre de 2026  
-**Base vigente:** v46  
-**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
+**Base vigente:** v47  
+**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.  
 
 ## Arquitectura Home
 
@@ -22,7 +22,7 @@ Desktop permanece congelado. Mobile conserva el expediente como recurso visual d
 
 ## Confianza — aprobado v46
 
-La sección debe aprovechar el ancho con **información profesional real**, no con decoración agregada sólo para rellenar espacio.
+La sección usa contenido real/profesional para aprovechar el ancho; no añadir adornos para rellenar huecos.
 
 Entrada:
 
@@ -30,32 +30,30 @@ Entrada:
 - H2: **Atención legal directa para proteger tu marca**
 - frase: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
 
-### Perfil del abogado
+### Perfil
 
-En desktop usar tres zonas:
+Desktop usa tres zonas:
 
-1. **Foto profesional** con marco visual doble fino navy + dorado.
+1. **Foto profesional** con marco visual doble muy fino (navy + dorado), sin card pesada.
 2. **Nombre + rol + bio + CTA WhatsApp**.
 3. **Información profesional verificable**.
 
-Solicitar al abogado:
+Información a solicitar al abogado:
 
 - nombre completo como desea aparecer públicamente;
 - fotografía profesional;
 - formación académica y universidad;
 - diplomados, especialización, cursos o certificaciones relevantes;
 - experiencia profesional relevante;
-- experiencia relacionada con IMPI / marcas, únicamente como él autorice expresarla;
-- cédula profesional, sólo si desea publicarla;
+- experiencia relacionada con IMPI / marcas, sólo como él autorice expresarla;
+- cédula profesional, únicamente si desea publicarla;
 - perfiles profesionales/enlaces, si desea mostrarlos.
 
 Mientras falten datos, usar placeholders explícitos **Pendiente de información**. Nunca inventar universidad, diplomados, años de experiencia, cédula, especialidad ni credenciales.
 
 ### Mobile
 
-Orden vertical:
-
-intro → foto → nombre/bio/CTA → información profesional en filas compactas → marcas.
+Mantener lectura vertical: intro → foto → nombre/bio/CTA → información profesional en filas compactas → marcas.
 
 ### Recursos descartados
 
@@ -64,7 +62,7 @@ No reintroducir en esta sección sin nueva aprobación:
 - wordmark gigante MARQ/SAFE de v44;
 - MQ animado de v45;
 - silueta de abogado;
-- copy inventado únicamente para llenar espacio.
+- copy adicional inventado sólo para llenar espacio.
 
 ## Carrusel de marcas
 
@@ -92,7 +90,17 @@ Antes de producción confirmar autorización para exhibir públicamente cada log
 - WhatsApp como conversión principal;
 - no inventar prueba social ni credenciales;
 - futuro port a Gutenberg debe mantener contenido editable sin exponer CSS/JS crítico;
-- datos repetidos como precios deben tener una sola fuente de verdad.
+- datos repetidos (como precios) deben tener una sola fuente de verdad.
+
+## Heroes de servicios — corrección desktop v47
+
+En escritorio, las páginas de servicio deben dejar una separación segura entre el header sticky y la tarjeta principal del hero.
+
+- no permitir que el borde superior, eyebrow o título parezcan ocultos bajo la navegación;
+- aplicar el ajuste sólo desde 1051px;
+- móvil conserva su reflow actual;
+- los nombres visibles de servicio deben ser consistentes: Registro de marca, Búsqueda y viabilidad, Oficios y requerimientos, Declaración de uso, Renovación de marca y Aviso comercial;
+- en Registro, el eyebrow aprobado es **REGISTRO DE MARCA**, no “TU MARCA, EN BUENAS MANOS”.
 
 ## Performance / accesibilidad
 
