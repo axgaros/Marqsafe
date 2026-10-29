@@ -2,7 +2,7 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 29 de octubre de 2026  
-**Base vigente:** v56  
+**Base vigente:** v57  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
 ## Arquitectura Home
@@ -56,9 +56,7 @@ Desktop:
 - eyebrow de Registro: **REGISTRO DE MARCA**, con el mismo sistema dorado de los demás servicios;
 - Declaración de uso conserva la compactación que permite mostrar completos ambos CTA sin agrandar innecesariamente el hero.
 
-## Rutas de requisitos — sistema vigente v56
-
-Esta sección sustituye las geometrías y comportamiento de motion de v52–v55.
+## Rutas de requisitos — sistema vigente v57
 
 La ruta **no representa pasos administrativos inventados**. Representa la información/documentos que MarqSafe necesita del cliente para realizar o revisar cada servicio.
 
@@ -76,16 +74,20 @@ La ruta **no representa pasos administrativos inventados**. Representa la inform
 Referencia conceptual aprobada el 29-oct-2026: un **camino periódico, simétrico y armónico**, similar a una onda/S continua con curvas limpias y radios consistentes.
 
 - abandonar serpientes libres, curvas irregulares y cambios de dirección improvisados;
-- **desktop:** recorrido principalmente horizontal que entra por la izquierda, alterna crestas/valles regulares y sale por la derecha;
-- **mobile:** la misma gramática rotada a vertical, alternando derecha/izquierda de manera uniforme;
+- **mobile es la geometría maestra aprobada**;
+- **desktop no se diseña por separado:** es exactamente la geometría móvil rotada 90° en sentido antihorario y escalada horizontalmente;
+- se conservan el mismo ritmo Bézier, periodicidad, separación relativa de estaciones y orden del recorrido;
+- desktop entra por la izquierda a media altura, sube a la primera estación y después alterna cresta/valle de forma regular;
+- mobile mantiene el recorrido vertical alternando derecha/izquierda;
 - la misma periodicidad se adapta a 2, 3, 4 o 5 estaciones sin forzar una cantidad fija;
-- el camino usa una pista exterior clara y gruesa, una guía central discontinua tenue y un trazo navy sólido que se va completando;
+- el camino usa una pista exterior clara y gruesa, una guía central discontinua tenue y un trazo navy sólido;
 - estaciones marcadas sobre la propia ruta; texto alrededor sin cards ni iconos genéricos;
+- en desktop, los textos se colocan por fuera de la onda, arriba en crestas y abajo en valles;
 - números 01, 02, etc. indican orden de lectura, no necesariamente etapas legales.
 
-### Motion aprobado v56
+### Motion aprobado
 
-El relleno **ya no depende de recorrer toda la sección con scroll**.
+El relleno **no depende de recorrer toda la sección con scroll**.
 
 - cuando la sección entra aproximadamente 18% al viewport, el camino comienza a llenarse automáticamente;
 - el progreso continúa por tiempo aunque el usuario deje de hacer scroll;
