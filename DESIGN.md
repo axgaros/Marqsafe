@@ -1,8 +1,8 @@
 # DESIGN.md — MarqSafe
 
 **Estado:** contrato visual activo  
-**Última actualización:** 28 de octubre de 2026  
-**Base vigente:** v55  
+**Última actualización:** 29 de octubre de 2026  
+**Base vigente:** v56  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
 ## Arquitectura Home
@@ -27,12 +27,9 @@ La sección usa contenido profesional real para aprovechar el ancho; no adornos 
 - eyebrow: **CONFIANZA Y ACOMPAÑAMIENTO**
 - H2: **Atención legal directa para proteger tu marca**
 - frase: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
-
-Desktop usa tres zonas: foto profesional con marco fino navy+dorado; nombre/rol/bio/CTA; información profesional verificable.
-
-Mientras falten datos usar **Pendiente de información**. Nunca inventar universidad, diplomados, años de experiencia, cédula, especialidad ni credenciales.
-
-No reintroducir sin nueva aprobación: wordmark gigante v44, MQ animado v45, silueta de abogado ni copy inventado para llenar espacio.
+- desktop: foto profesional con marco fino navy+dorado; nombre/rol/bio/CTA; información profesional verificable.
+- mientras falten datos usar **Pendiente de información**. Nunca inventar credenciales.
+- no reintroducir sin nueva aprobación: wordmark gigante v44, MQ animado v45, silueta de abogado ni copy inventado para llenar espacio.
 
 ## Carrusel de marcas
 
@@ -46,9 +43,7 @@ Conservar patrón aprobado:
 - chevrons limpios;
 - marca central nítida y vecinas atenuadas.
 
-Título: **Marcas con las que hemos trabajado**.
-
-Antes de producción confirmar autorización para exhibir públicamente cada logo.
+Título: **Marcas con las que hemos trabajado**. Antes de producción confirmar autorización pública de cada logo.
 
 ## Heroes de servicios
 
@@ -56,16 +51,16 @@ Desktop:
 
 - Viabilidad, Oficios, Declaración, Renovación y Aviso comercial mantienen aproximadamente **14 px** entre header y bloque principal;
 - eliminar línea divisoria al final del hero;
-- la siguiente sección empieza con espacio corto y consistente, no pegada ni con hueco grande;
+- la siguiente sección empieza con espacio corto y consistente;
 - Registro conserva su hero especial y debe mostrar completo el borde superior;
 - eyebrow de Registro: **REGISTRO DE MARCA**, con el mismo sistema dorado de los demás servicios;
 - Declaración de uso conserva la compactación que permite mostrar completos ambos CTA sin agrandar innecesariamente el hero.
 
-## Rutas adaptativas de requisitos — v55
+## Rutas de requisitos — sistema vigente v56
 
-Esta sección **sustituye las reglas de contenido y cantidad de estaciones de v52–v54**.
+Esta sección sustituye las geometrías y comportamiento de motion de v52–v55.
 
-La ruta no representa pasos administrativos inventados. Representa **la información/documentos que MarqSafe necesita del cliente para realizar o revisar cada servicio**.
+La ruta **no representa pasos administrativos inventados**. Representa la información/documentos que MarqSafe necesita del cliente para realizar o revisar cada servicio.
 
 ### Cantidad y contenido por servicio
 
@@ -76,24 +71,33 @@ La ruta no representa pasos administrativos inventados. Representa **la informac
 - **Renovación de marca — 3 estaciones:** Número de registro; Productos o servicios en uso; Datos del titular.
 - **Aviso comercial — 3 estaciones:** Frase o eslogan exacto; Qué anuncia; Datos del titular.
 
-### Geometría
+### Geometría aprobada
 
-- base visual aprobada: **opción A**, S limpia, armónica y simétrica;
-- cada estación alterna izquierda/derecha;
-- curvas Bézier amplias con tangentes verticales suaves;
-- la misma gramática se adapta a 2, 3, 4 o 5 estaciones; nunca forzar un número fijo por estética;
-- 2 puntos = curva simple; 3 = S clásica; 4 = S extendida; 5 = doble S vertical;
-- mobile usa la misma gramática pero más vertical y compacta;
-- el camino es el recurso gráfico principal: sin cards ni iconos genéricos;
-- pista base clara y trazo navy más grueso;
-- el trazo se rellena progresivamente conforme el usuario hace scroll;
-- cada estación se activa en dorado al llegar el recorrido;
-- SVG + JS vanilla; sin GSAP, canvas, WebGL ni librerías de motion;
-- `prefers-reduced-motion`: ruta completa y estaciones visibles sin animación.
+Referencia conceptual aprobada el 29-oct-2026: un **camino periódico, simétrico y armónico**, similar a una onda/S continua con curvas limpias y radios consistentes.
+
+- abandonar serpientes libres, curvas irregulares y cambios de dirección improvisados;
+- **desktop:** recorrido principalmente horizontal que entra por la izquierda, alterna crestas/valles regulares y sale por la derecha;
+- **mobile:** la misma gramática rotada a vertical, alternando derecha/izquierda de manera uniforme;
+- la misma periodicidad se adapta a 2, 3, 4 o 5 estaciones sin forzar una cantidad fija;
+- el camino usa una pista exterior clara y gruesa, una guía central discontinua tenue y un trazo navy sólido que se va completando;
+- estaciones marcadas sobre la propia ruta; texto alrededor sin cards ni iconos genéricos;
+- números 01, 02, etc. indican orden de lectura, no necesariamente etapas legales.
+
+### Motion aprobado v56
+
+El relleno **ya no depende de recorrer toda la sección con scroll**.
+
+- cuando la sección entra aproximadamente 18% al viewport, el camino comienza a llenarse automáticamente;
+- el progreso continúa por tiempo aunque el usuario deje de hacer scroll;
+- duración aproximada según cantidad de requisitos: 2 puntos = 1.7s; 3 = 2.2s; 4 = 2.7s; 5 = 3.2s;
+- easing suave `easeInOutSine`;
+- cada estación se activa cuando el trazo la alcanza;
+- `prefers-reduced-motion`: camino completo y estaciones visibles inmediatamente;
+- implementación: SVG + JS vanilla + IntersectionObserver; sin GSAP, canvas, WebGL ni librerías de motion.
 
 ### Semántica
 
-El kicker aprobado es **QUÉ NECESITAMOS DE TI**. Los números 01, 02, etc. indican orden de lectura, no necesariamente etapas legales del trámite.
+Kicker aprobado: **QUÉ NECESITAMOS DE TI**.
 
 ## SEO / CRO / WordPress
 
