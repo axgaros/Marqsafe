@@ -2,7 +2,7 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 30 de octubre de 2026  
-**Base vigente:** v59  
+**Base vigente:** v60  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
 ## Arquitectura Home
@@ -56,7 +56,14 @@ Desktop:
 - eyebrow de Registro: **REGISTRO DE MARCA**, con el mismo sistema dorado de los demás servicios;
 - Declaración de uso conserva la compactación que permite mostrar completos ambos CTA sin agrandar innecesariamente el hero.
 
-## Rutas de requisitos — sistema vigente v59
+Mobile v60:
+
+- la Home móvil es la referencia visual de las seis páginas de servicio;
+- usar superficies editoriales grandes con radios de 26–30 px, blanco/gris suave/beige cálido, divisores finos y botones pill;
+- evitar que los heroes se sientan como tarjetas desktop apiladas: el capítulo vive dentro de una superficie redondeada y el SVG se integra como fondo tenue;
+- Registro adapta además pricing, requisitos, proceso y ciclo de vida al mismo lenguaje móvil.
+
+## Rutas de requisitos — sistema vigente v60
 
 La ruta **no representa pasos administrativos inventados**. Representa la información/documentos que MarqSafe necesita del cliente para realizar o revisar cada servicio.
 
@@ -81,9 +88,20 @@ Referencia conceptual aprobada el 29-oct-2026: un **camino periódico, simétric
 - mobile mantiene el recorrido vertical alternando derecha/izquierda;
 - la misma periodicidad se adapta a 2, 3, 4 o 5 estaciones sin forzar una cantidad fija;
 - el camino usa una pista exterior clara y gruesa, una guía central discontinua tenue y un trazo navy sólido;
-- estaciones marcadas sobre la propia ruta; texto alrededor sin cards ni iconos genéricos;
+- estaciones marcadas sobre la propia ruta;
 - en desktop, los textos se colocan por fuera de la onda, arriba en crestas y abajo en valles;
 - números 01, 02, etc. indican orden de lectura, no necesariamente etapas legales.
+
+### Legibilidad móvil — v60
+
+La geometría, marcadores y animación aprobados quedan **congelados**.
+
+- el ajuste visual aplica sólo al layout/copy en <=720px;
+- los textos dejan la máscara tipo sticker de v59;
+- cada estación usa una **burbuja intencional** con radio de 18 px, alternando blanco y beige suave, integrada al sistema visual de Home;
+- mantener separación suficiente entre burbuja y estación para que el camino nunca atraviese las letras;
+- no modificar paths SVG, `viewBox`, posiciones de estaciones, grosor ni timing para resolver colisiones de texto;
+- desktop no cambia.
 
 ### Motion aprobado
 
@@ -96,18 +114,6 @@ El relleno **no depende de recorrer toda la sección con scroll**.
 - cada estación se activa cuando el trazo la alcanza;
 - `prefers-reduced-motion`: camino completo y estaciones visibles inmediatamente;
 - implementación: SVG + JS vanilla + IntersectionObserver; sin GSAP, canvas, WebGL ni librerías de motion.
-
-### Legibilidad móvil — v59
-
-La geometría, marcadores y animación aprobados quedan **congelados**.
-
-- el ajuste aplica sólo al texto en <=900px;
-- los bloques de copy se separan más de las estaciones para liberar el corredor visual de la ruta;
-- el ancho de copy se reduce en móvil para evitar invadir la curva;
-- cada copy usa una máscara del mismo color del fondo, sin borde ni sombra, para impedir que el camino atraviese visualmente las letras;
-- esa máscara no debe percibirse como card;
-- desktop no cambia;
-- no modificar paths SVG, `viewBox`, posiciones de estaciones, grosor ni timing para resolver colisiones de texto.
 
 ### Semántica
 
