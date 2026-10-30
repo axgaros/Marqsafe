@@ -1,8 +1,8 @@
 # DESIGN.md — MarqSafe
 
 **Estado:** contrato visual activo  
-**Última actualización:** 29 de octubre de 2026  
-**Base vigente:** v57  
+**Última actualización:** 30 de octubre de 2026  
+**Base vigente:** v59  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
 ## Arquitectura Home
@@ -56,7 +56,7 @@ Desktop:
 - eyebrow de Registro: **REGISTRO DE MARCA**, con el mismo sistema dorado de los demás servicios;
 - Declaración de uso conserva la compactación que permite mostrar completos ambos CTA sin agrandar innecesariamente el hero.
 
-## Rutas de requisitos — sistema vigente v57
+## Rutas de requisitos — sistema vigente v59
 
 La ruta **no representa pasos administrativos inventados**. Representa la información/documentos que MarqSafe necesita del cliente para realizar o revisar cada servicio.
 
@@ -97,9 +97,32 @@ El relleno **no depende de recorrer toda la sección con scroll**.
 - `prefers-reduced-motion`: camino completo y estaciones visibles inmediatamente;
 - implementación: SVG + JS vanilla + IntersectionObserver; sin GSAP, canvas, WebGL ni librerías de motion.
 
+### Legibilidad móvil — v59
+
+La geometría, marcadores y animación aprobados quedan **congelados**.
+
+- el ajuste aplica sólo al texto en <=900px;
+- los bloques de copy se separan más de las estaciones para liberar el corredor visual de la ruta;
+- el ancho de copy se reduce en móvil para evitar invadir la curva;
+- cada copy usa una máscara del mismo color del fondo, sin borde ni sombra, para impedir que el camino atraviese visualmente las letras;
+- esa máscara no debe percibirse como card;
+- desktop no cambia;
+- no modificar paths SVG, `viewBox`, posiciones de estaciones, grosor ni timing para resolver colisiones de texto.
+
 ### Semántica
 
 Kicker aprobado: **QUÉ NECESITAMOS DE TI**.
+
+## Fuente Agency — integración local
+
+- La fuente comercial no se distribuye dentro del ZIP.
+- Slot preparado: `assets/fonts/Agency.woff`.
+- `styles.css` carga ese WOFF mediante `@font-face` y mantiene fallbacks si falta el archivo.
+- No subir la fuente licenciada a repositorios públicos.
+
+## Medición / marketing — decisión en pausa
+
+No implementar todavía en el prototipo. La opción preferida a retomar es: **Google tag directa (`gtag.js`) + GA4 + Google Ads conversion tracking + Consent Mode + banner ligero propio**, sin Google Tag Manager inicialmente. Search Console queda separado como herramienta SEO sin JavaScript ni cookies en el visitante.
 
 ## SEO / CRO / WordPress
 
@@ -117,4 +140,4 @@ Priorizar SVG/WebP, JS pequeño, focus visible, teclado, contraste, targets tác
 
 ## Gate final
 
-> ¿Ayuda a entender, confiar, decidir o actuar; usa el espacio sin rellenarlo artificialmente; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible en WordPress?
+> ¿Ayuda a entender, confiar, decidir o actuar; usa el espacio sin rellenarlo artificialmente; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible?
