@@ -2,7 +2,7 @@
 
 **Estado:** contrato visual activo  
 **Última actualización:** 30 de octubre de 2026  
-**Base vigente:** v62  
+**Base vigente:** v63  
 **Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
 
 ## Arquitectura Home
@@ -56,16 +56,16 @@ Desktop:
 - eyebrow de Registro: **REGISTRO DE MARCA**, con el mismo sistema dorado de los demás servicios;
 - Declaración de uso conserva la compactación que permite mostrar completos ambos CTA sin agrandar innecesariamente el hero.
 
-Mobile v62:
+Mobile v63:
 
 - la Home móvil es la referencia visual de las seis páginas de servicio;
 - usar superficies editoriales grandes con radios de 26–30 px, blanco/gris suave/beige cálido, divisores finos y botones pill;
 - evitar que los heroes se sientan como tarjetas desktop apiladas: el capítulo vive dentro de una superficie redondeada y el SVG se integra como fondo tenue;
 - el hero de Inicio conserva el expediente como recurso visual, pero en móvil debe verse grande y presente, no relegado a una esquina;
-- Registro usa un visual distinto al expediente de Inicio: composición abstracta de marca/clasificación/protección, con presencia equivalente;
+- Registro usa un visual distinto al expediente de Inicio: composición abstracta de marca/clasificación/protección, con presencia equivalente; el escudo debe ser compacto verticalmente, no alargado;
 - Registro adapta además pricing, requisitos, proceso y ciclo de vida al mismo lenguaje móvil.
 
-## Rutas de requisitos — sistema vigente v62
+## Rutas de requisitos — sistema vigente v63
 
 La ruta **no representa pasos administrativos inventados**. Representa la información/documentos que MarqSafe necesita del cliente para realizar o revisar cada servicio.
 
@@ -94,12 +94,13 @@ Referencia conceptual aprobada el 29-oct-2026: un **camino periódico, simétric
 - en desktop, los textos se colocan por fuera de la onda, arriba en crestas y abajo en valles;
 - números 01, 02, etc. indican orden de lectura, no necesariamente etapas legales.
 
-### Legibilidad móvil — v62
+### Legibilidad móvil — v63
 
 La geometría, marcadores y animación aprobados quedan **congelados**.
 
 - el ajuste visual aplica sólo al layout/copy en <=720px;
-- en móvil, cada estación muestra **sólo el título del requisito**; se ocultan número y descripción para evitar saturación;
+- en móvil, cada estación muestra **número dorado + título del requisito**; se oculta la descripción para evitar saturación;
+- el número es pequeño, dorado y funciona como apoyo de lectura, sin caja propia;
 - se elimina por completo el look de sticker/burbuja: sin fondo, borde ni sombra;
 - los títulos se colocan hacia el exterior del marcador con una separación fija para que nunca toquen el punto ni el trazo;
 - esta regla se aplica a las seis páginas de servicio, adaptándose automáticamente a rutas de 2, 3, 4 o 5 estaciones;
