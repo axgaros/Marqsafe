@@ -30,16 +30,25 @@ jobs:
         run: npm run build:prototype
       - name: Comparacion visual y pruebas de regresion
         run: npm run test:regression
+      - name: Auditoría Lighthouse de velocidad, accesibilidad y SEO (muestra representativa)
+        run: npm run audit:performance
+      - name: Publicar reporte de Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MarqSafe-v110-lighthouse
+          path: dist/lighthouse/
+          if-no-files-found: warn
       - name: Publicar reporte tecnico
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MarqSafe-v109-auditoria
-          path: dist/reporte-v109.json
+          name: MarqSafe-v110-auditoria
+          path: dist/reporte-v110.json
           if-no-files-found: warn
       - name: Publicar ZIP SOLO si las pruebas aprobaron
         uses: actions/upload-artifact@v4
         with:
-          name: MarqSafe-v109-prototipo-limpio
-          path: dist/MarqSafe_v109_prototipo_limpio.zip
+          name: MarqSafe-v110-prototipo-limpio
+          path: dist/MarqSafe_v110_prototipo_limpio.zip
           if-no-files-found: error

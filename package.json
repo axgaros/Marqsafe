@@ -5,7 +5,8 @@
   "description": "Herramientas locales de auditoría y empaquetado, no se publican con el sitio.",
   "scripts": {
     "build:prototype": "node scripts/build-clean-prototype.mjs",
-    "test:regression": "node scripts/visual-regression.mjs"
+    "test:regression": "node scripts/visual-regression.mjs",
+    "audit:performance": "node scripts/performance-audit.mjs"
   },
   "devDependencies": {
     "archiver": "^7.0.1",
@@ -14,6 +15,7 @@
     "playwright": "^1.55.1",
     "pngjs": "^7.0.0",
     "postcss": "^8.5.6",
-    "postcss-selector-parser": "^7.1.0"
+    "postcss-selector-parser": "^7.1.0",
+    "lighthouse": "latest"
   }
 }

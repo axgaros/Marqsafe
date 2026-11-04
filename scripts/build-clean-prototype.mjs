@@ -16,6 +16,13 @@ const ORIGINAL_JS = path.join(ROOT, 'assets/js/main.js');
 const htmlNames = (await fs.readdir(ROOT)).filter((name) => name.endsWith('.html')).sort();
 const sourceCss = await fs.readFile(ORIGINAL_CSS, 'utf8');
 const sourceJs = await fs.readFile(ORIGINAL_JS, 'utf8');
+for (const [file, content] of [[ORIGINAL_JS, sourceJs], [ORIGINAL_CSS, sourceCss]]) {
+  if (/\/\*[\s\S]*?\*\//.test(content) || /(^|\n)\s*\/\/[^\n]*/.test(content)) throw new Error('Comentarios de desarrollo encontrados en '+file);
+}
+for (const name of htmlNames) {
+  const html=await fs.readFile(path.join(ROOT,name),'utf8');
+  if (/<!--[\s\S]*?-->/.test(html)) throw new Error('Comentario HTML encontrado en '+name);
+}
 const sourceHtml = (await Promise.all(htmlNames.map((name) => fs.readFile(path.join(ROOT, name), 'utf8')))).join('\n');
 
 await fs.rm(DIST, { recursive: true, force: true });
@@ -90,25 +97,6 @@ const copyImages = async (dir, relative) => {
 await copyImages(path.join(ROOT, 'assets/img'), 'assets/img');
 await copyImages(path.join(ROOT, 'assets/marcas-clientes'), 'assets/marcas-clientes');
 
-const thirdPartyNotices = [
-  'MarqSafe — Avisos de terceros',
-  '',
-  'Siluetas SVG de las secciones de servicios: derivados de Font Awesome Free 6.7.2',
-  'Iconos: store, fingerprint, envelope, pen-nib, hourglass, bullhorn.',
-  'Licencia de iconos Font Awesome Free: Creative Commons Attribution 4.0 (CC BY 4.0).',
-  'https://fontawesome.com/license/free',
-  'https://creativecommons.org/licenses/by/4.0/',
-  '',
-  'Las seis fotografias editoriales utilizadas para ilustrar casos del blog',
-  'provienen de Unsplash. Sus autores y enlaces de origen se documentan en',
-  'https://github.com/axgaros/Marqsafe/blob/main/SOURCES.md',
-  'Las imagenes son ilustrativas y no pruebas sobre los casos descritos.',
-  '',
-  'La tipografia comercial Agency no se distribuye con el prototipo.',
-  ''
-].join('\n');
-await fs.writeFile(path.join(SITE, 'AVISOS-DE-TERCEROS.txt'), thirdPartyNotices, 'utf8');
-
 execFileSync('node', ['--check', ORIGINAL_JS], { stdio: 'pipe' });
 const localMissing = [];
 let h1Problems = [];
@@ -128,7 +116,7 @@ if (localMissing.length || h1Problems.length) {
 }
 
 const report = {
-  version: 'v109',
+  version: 'v110',
   base: 'v108 commit 54c1c0a',
   approach: 'Eliminacion conservadora de reglas solo cuando todas sus alternativas exigen clases ausentes de todo el HTML y JS; minificacion de Lightning CSS sin reordenar manualmente la cascada.',
   cssOriginalBytes: Buffer.byteLength(sourceCss),
@@ -141,13 +129,14 @@ const report = {
   htmlPages: htmlNames.length,
   imagesIncluded,
   docsExcludedFromZip: ['README.md', 'DESIGN.md', 'QA-AUDIT.md', 'ARCHITECTURE.md', 'SOURCES.md', 'docs/', 'assets/fonts/README.txt', 'assets/marcas-clientes/manifest.json'],
-  legalNoticeIncluded: true,
+  legalNoticeIncluded: false,
   staticLinksValidated: true,
-  javascriptSyntaxValidated: true
+  javascriptSyntaxValidated: true,
+  commentsRemovedFromWebCode: true
 };
-await fs.writeFile(path.join(DIST, 'reporte-v109.json'), JSON.stringify(report, null, 2));
+await fs.writeFile(path.join(DIST, 'reporte-v110.json'), JSON.stringify(report, null, 2));
 
-const zipPath = path.join(DIST, 'MarqSafe_v109_prototipo_limpio.zip');
+const zipPath = path.join(DIST, 'MarqSafe_v110_prototipo_limpio.zip');
 await new Promise((resolve, reject) => {
   const output = fssync.createWriteStream(zipPath);
   const zip = archiver('zip', { zlib: { level: 9 } });

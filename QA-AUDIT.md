@@ -65,3 +65,19 @@ https://github.com/axgaros/Marqsafe/actions/runs/41758798511
 **Alcance de la afirmación:** PASS confirma equivalencia visual dentro de la tolerancia y pruebas automatizadas sobre los estados medidos. No demuestra todos los estados posibles en todos los navegadores o dispositivos. No equivale a una prueba de rendimiento Core Web Vitals de producción. No se modificaron los archivos HTML ni JS aprobados.
 
 **Estado posterior:** queda pendiente confirmar `diego@marqsafe.com`, integrar Agency en el paquete definitivo por el titular, retirar `noindex,nofollow` únicamente en el ZIP final y desplegar en Hostinger. No usar Google Search Console.
+
+---
+
+## v110 — Terminología, comentarios y auditoría de rendimiento (4 noviembre 2026)
+
+**Cambios autorizados:** `contacto.html` cambia “Aviso de privacidad simplificado” y “aviso integral” por “Aviso de privacidad”; `aviso-de-privacidad.html` elimina “integral” del encabezado y la metadescripción. La redacción legal de fondo permanece intacta. `index.html` y `marqsafe.html` añaden las dimensiones intrínsecas 1122×1402 a la fotografía de Diego Ortega, conservando los estilos aprobados.
+
+**Paquete:** no generar `AVISOS-DE-TERCEROS.txt`. Permanecen en el repositorio público los créditos y condiciones documentados en `SOURCES.md`; respetar las licencias de terceros en el uso del sitio. El ZIP v110 no contiene documentación de desarrollo, archivos de fuente comercial o recursos temporales.
+
+**Comentarios:** un examen estático de los 18 HTML, el CSS distribuible y `main.js` no detectó comentarios `<!-- -->`, `/* */` o líneas de comentario JavaScript. No se realizan cambios arbitrarios al JS probado.
+
+**Peso medido del ZIP v110 local:** 1,038,273 bytes en 45 archivos descomprimidos; 726,559 bytes del ZIP de distribución. WebP (21 archivos) suma aproximadamente 614 KB; CSS distribuible 164,022 bytes; JS 13,732 bytes; 18 páginas HTML suman cerca de 240 KB. La cifra total es el proyecto completo, **no los bytes por visita**.
+
+**Aclaración de metodología:** la regresión de v109 fue positiva (216 capturas, PASS). La v110 añade terminología y dimensiones intrínsecas. El workflow valida otra vez todo el sitio y ejecuta Lighthouse sobre una muestra representativa de páginas en móvil y escritorio. Los informes se publican como artefactos del workflow; **no afirmar métricas Lighthouse definitivas hasta consultar el resultado real**. Las condiciones de GitHub Actions no representan el rendimiento real del sitio hasta publicarlo en Hostinger.
+
+**Próximos pasos de producción:** comprobar correo `diego@marqsafe.com`; integrar Agency licenciada por el titular en la entrega definitiva; retirar `noindex,nofollow` de páginas indexables solamente al publicar; desplegar en Hostinger. Search Console descartado. No reabrir el texto legal, blog ni autorizaciones ya aprobadas.
