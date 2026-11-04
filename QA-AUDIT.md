@@ -1,4 +1,4 @@
-# QA-AUDIT — MarqSafe v108
+# QA-AUDIT — MarqSafe · registro acumulativo
 
 **Estado:** validación estática del paquete; queda pendiente validación real en navegadores, servidores y móviles.  
 **Alcance:** base v107, cambio de seis nombres de página, consolidación de documentación y retirada de comentarios de desarrollo.
@@ -97,3 +97,15 @@ Ejecución: https://github.com/axgaros/Marqsafe/actions/runs/41763456437 — res
 - **ZIP validado:** 45 archivos funcionales, 1,038,273 bytes descomprimidos; ZIP directo de entrega 726,559 bytes. Sin `AVISOS-DE-TERCEROS.txt`, Markdown o herramientas de desarrollo. Créditos y condiciones permanecen en `SOURCES.md` del repositorio.
 - **Integridad:** las cuatro páginas modificadas localmente (`contacto.html`, `aviso-de-privacidad.html`, `index.html`, `marqsafe.html`) coinciden byte por byte con el ZIP generado en GitHub. No se detectaron comentarios de desarrollo en HTML/CSS/JS del prototipo.
 - **Límite:** Lighthouse se ejecutó contra servidor local en GitHub Actions con gzip y caché simulada; no mide latencia de Hostinger, Core Web Vitals de usuarios, ni comportamiento de la futura fuente Agency.
+
+
+---
+
+## v111 — Restitución de la foto de Diego Ortega al HTML v109 (4 noviembre 2026)
+
+- Se revierten **únicamente** los atributos `width="1122" height="1402"` añadidos al `<img>` del abogado en `index.html` y `marqsafe.html` durante v110; la etiqueta completa vuelve a coincidir con la de v109.
+- El WebP de Diego es **idéntico** (SHA-256 `be604834c094f2bbb2dde810d3dc9da2454576a40a6012609ae51fc51490fe8b`); no se ha retocado ni sustituido la fotografía.
+- Sin modificaciones en CSS, JavaScript, estructura del sitio, textos legales o imágenes. El ZIP v111 entregado en ChatGPT es igual al ZIP v110 a excepción de estas dos etiquetas HTML; contiene 45 archivos y ocupa 726,538 bytes.
+- Se conserva `noindex,nofollow` hasta la entrega definitiva, por lo que el diagnóstico SEO sintético de Lighthouse (~69/100) no indica que la arquitectura SEO sea deficiente; responde principalmente a la orden explícita de no indexar.
+- **Detalles de contraste según Lighthouse v110:** Home escritorio: encabezado dorado “TU MARCA, EN BUENAS MANOS” y palabra “IMPI”; Registro escritorio: palabra “IMPI” y precio “$6,500 MXN”; MarqSafe móvil: “CONFIANZA Y ACOMPAÑAMIENTO”; Blog: categorías/fechas de las tarjetas (clase `.resource-card-copy-v81 small`); Contacto móvil: “CONTACTO DIRECTO”; Aviso de privacidad móvil: números “01” a “08”. Lighthouse también marcó el texto del botón flotante de WhatsApp en algunas pruebas de escritorio; ese texto no es dorado y debe revisarse por separado si se aborda accesibilidad. No se alteraron los colores porque el usuario solo solicitó identificar las zonas.
+- Los resultados y la metodología de rendimiento de v110 siguen siendo la última auditoría sintética aprobada. La automatización de v111 repetirá el control visual y Lighthouse, sin atribuir valores numéricos a la ejecución antes de completarla.

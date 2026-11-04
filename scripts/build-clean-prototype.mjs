@@ -116,7 +116,7 @@ if (localMissing.length || h1Problems.length) {
 }
 
 const report = {
-  version: 'v110',
+  version: 'v111',
   base: 'v108 commit 54c1c0a',
   approach: 'Eliminacion conservadora de reglas solo cuando todas sus alternativas exigen clases ausentes de todo el HTML y JS; minificacion de Lightning CSS sin reordenar manualmente la cascada.',
   cssOriginalBytes: Buffer.byteLength(sourceCss),
@@ -134,9 +134,9 @@ const report = {
   javascriptSyntaxValidated: true,
   commentsRemovedFromWebCode: true
 };
-await fs.writeFile(path.join(DIST, 'reporte-v110.json'), JSON.stringify(report, null, 2));
+await fs.writeFile(path.join(DIST, 'reporte-v111.json'), JSON.stringify(report, null, 2));
 
-const zipPath = path.join(DIST, 'MarqSafe_v110_prototipo_limpio.zip');
+const zipPath = path.join(DIST, 'MarqSafe_v111_prototipo_limpio.zip');
 await new Promise((resolve, reject) => {
   const output = fssync.createWriteStream(zipPath);
   const zip = archiver('zip', { zlib: { level: 9 } });

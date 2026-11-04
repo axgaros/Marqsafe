@@ -1,6 +1,6 @@
 # MarqSafe — sitio web estático
 
-**Versión de trabajo:** v108 · 3 de noviembre de 2026.  
+**Versión de trabajo:** v111 · 3 de noviembre de 2026 (actualizaciones de compilación y entrega: 4 de noviembre).  
 **Estado:** prototipo previo a publicación. No desplegar sin completar los pendientes.
 
 ## Cómo usar
@@ -61,3 +61,7 @@ Los artículos conservan su autoría institucional sin atribución personal arbi
 ## Entregables limpios a partir de v109
 
 La documentación de trabajo SIEMPRE permanece en GitHub (README, DESIGN, ARCHITECTURE, QA-AUDIT, SOURCES, docs y scripts). **No se incluye en los ZIP de prototipo.** El archivo \`QA-AUDIT.md\` mantiene secciones acumulativas por versión. El workflow \`.github/workflows/prototype-clean.yml\` crea un ZIP de archivos funcionales y comprueba el resultado visual frente a la versión base antes de publicarlo como artefacto descargable. El código HTML/JS aprobado sigue intacto y la optimización de CSS se realiza en una copia de distribución. El ZIP conserva \`noindex,nofollow\` hasta la entrega definitiva.
+
+## v111 — Restauración de fotografía
+
+Se eliminan exclusivamente los atributos HTML `width` y `height` añadidos a la imagen de Diego Ortega en `index.html` y `marqsafe.html`, recuperando exactamente la etiqueta usada en v109. El archivo `assets/img/diego-ortega.webp`, los estilos CSS, la ubicación visual y el resto del sitio permanecen intactos. Las correcciones de textos de privacidad y la limpieza del ZIP hechas en v110 se conservan. El ZIP se reproduce con `npm run build:prototype` y el registro de la prueba queda en `QA-AUDIT.md`.
