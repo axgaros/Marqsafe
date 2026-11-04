@@ -64,5 +64,23 @@
     "brand": "pumped-bars-and-booth",
     "file": "13-pumped-bars-and-booth.webp",
     "kb": 7.5
+  },
+  {
+    "n": 14,
+    "brand": "fanpop",
+    "file": "14-fanpop.webp",
+    "kb": 26.1
+  },
+  {
+    "n": 15,
+    "brand": "grupo-inveco",
+    "file": "15-grupo-inveco.webp",
+    "kb": 13.8
+  },
+  {
+    "n": 16,
+    "brand": "natamenata-pastry-shop",
+    "file": "16-natamenata-pastry-shop.webp",
+    "kb": 24.1
   }
 ]

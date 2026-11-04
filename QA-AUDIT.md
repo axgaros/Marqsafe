@@ -197,3 +197,14 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - Búsqueda y viabilidad: se elimina «incluye derechos del IMPI» del precio sin cambiar el importe de $1,000.
 - Queda pendiente recibir tres imágenes, optimizarlas a WebP, incorporarlas y revisar el carrusel/estructura en todas las vistas. No se modificaron CSS, JavaScript, fotografía de Diego ni páginas ajenas a las observaciones.
 - Antes de fusionar: contrastar copia HTML/manifest, verificar 14 logotipos, navegación, y empaquetar ZIP limpio preservando la fuente Agency ya instalada en Hostinger.
+
+
+### Validación de entrega v119 (4 noviembre 2026)
+
+- Paquete generado desde v118 aprobada, con las observaciones de Diego: actualización de reseña/área de práctica, contestación de oficios del paquete Protección total, respuesta FAQ, avisos sin nombre completo y búsqueda sin derechos del IMPI.
+- Carruseles de Inicio y MarqSafe con 14 fuentes: se retiran Doormex/Lunya de las referencias y se agregan FANPOP, Grupo INVECO y Natamenata Pastry Shop. Las imágenes nuevas fueron convertidas de PNG a WebP, RGB 800×800, optimizadas y verificadas; los 3 WebP pesan en conjunto 65,566 bytes.
+- Cambio CSS acotado a escritorio (>=1051 px): el rótulo 'CONFIANZA Y ACOMPAÑAMIENTO' puede ocupar su ancho intrínseco, evitando el corte de la última palabra; sin modificar el móvil.
+- ZIP local entregado: MarqSafe_v119_Observaciones_Diego.zip; SHA256 7602f23a93044021c127fa6ce8fe5356259c54d065e36962dc014f914741e3e8; 47 entradas, 775,193 bytes comprimidos.
+- Validación: 18 HTML, un H1 cada uno, sin enlaces de assets locales faltantes; 14 marcas distintas en cada carrusel; JS original v118 conservado byte por byte, sintaxis comprobada con Node; exclusiones SEO sin cambios.
+- La fuente Agency comercial no forma parte del ZIP y debe conservarse en la instalación ya publicada en Hostinger.
+- **Sin publicar:** la rama de GitHub es trabajo editorial; no fusionar hasta sincronizar también los 3 WebP binarios. El ZIP entregado sí los incluye y es funcional. La inspección visual en navegador dentro de esta sesión fue bloqueada por el entorno; la corrección de ancho se validó por cascada CSS y debe comprobarse después de desplegar.

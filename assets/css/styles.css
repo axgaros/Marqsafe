@@ -7002,3 +7002,5 @@ body{background:#fff}
 .home-page.home-v38 .hero-v20>.hero-copy-v20>*{position:relative;z-index:3}
 .home-page.home-v38 .hero-v20>.hero-visual-v20{z-index:0}
 }
+
+@media (min-width:1051px){.home-page.home-v38 .trust-intro-v41 .trust-kicker-v41{width:max-content;max-width:none;white-space:nowrap;overflow:visible}}
