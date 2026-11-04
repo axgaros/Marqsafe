@@ -122,3 +122,14 @@ Ejecución: https://github.com/axgaros/Marqsafe/actions/runs/41763456437 — res
 **Validación estática del ZIP:** prueba de integridad ZIP, 18 HTML, 15 URLs de sitemap, 15 páginas sin `noindex` ni `nofollow`, Contacto, Privacidad y 404 con `noindex,follow`, CSS/JS originales de v111, sin comentarios en archivos HTML/CSS/JS y sin fuentes propietarias. No se ha validado este ZIP en el servidor de producción.
 
 **Instrucciones:** insertar el fichero de fuente licenciada con nombre/archivo real `assets/fonts/Agency.woff` cuando se cumpla la licencia; al recomprimir, seleccionar los archivos de la raíz y evitar una carpeta envolvente. Extraer en `public_html` del Hostinger del cliente. Confirmar HTTPS y rutas en producción. Correo `diego@marqsafe.com` pendiente de prueba. Search Console descartado. El SEO técnico se encuentra implementado, sin promesa de indexación o posicionamiento inmediato.
+
+
+---
+
+## v113 — Corrección de superposición del hero móvil y flechas SVG (4 noviembre 2026)
+
+- **Motivo y diagnóstico:** en móviles reales, el SVG decorativo del hero de Inicio se veía por encima del título y párrafo, aparentando transparencia. CSS tenía `.home-page .hero-copy-v20{display:contents}` en un breakpoint y la regla v38 definía `z-index:2` para ese mismo contenedor. Al no generar caja propia, `display:contents` anulaba el efecto de apilamiento del contenedor. Se recupera `display:block`, `position:relative`, `z-index:2` y `opacity:1`, con el SVG decorativo en `z-index:0`. Solo breakpoint de hasta 720 px; escritorio permanece sin modificaciones de diseño.
+- **Flechas:** se sustituyeron los caracteres tipográficos direccionales (`↗`, `→`, `←`) en los HTML por iconos SVG de línea, basados en el trazo del botón principal del hero, evitando glifos renderizados como emoji. Se mantiene el sentido de retorno de los enlaces del blog. Sin dependencias externas.
+- **Alcance:** solo archivos HTML con flechas, CSS y documentación/código de compilación. JavaScript, logo, imágenes y SEO indexable permanecen intactos.
+- **Validación:** se realizará análisis estructural del ZIP y pruebas automatizadas del entorno de GitHub Actions. Esta versión incorpora cambios visuales deliberados, por lo que la regresión permite diferencias explícitamente acotadas en flechas y hero móvil, verificando en lugar de exigir identidad absoluta en dichos elementos. No atribuir la validación a un teléfono físico hasta comprobarla tras desplegar.
+- **Publicación y fuente:** el ZIP completo excluye `Agency.woff` por licencia; al actualizar Hostinger, conservar la fuente ya instalada o añadir el archivo comprado al ZIP antes de subir. No eliminar la carpeta de fuentes de producción.

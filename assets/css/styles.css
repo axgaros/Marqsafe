@@ -6992,3 +6992,6 @@ body{background:#fff}
     bottom:calc(clamp(16px,2vw,28px) + 58px + 16px);
   }
 }
+
+.ui-arrow{display:inline-block;width:1em;height:1em;vertical-align:-.14em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+@media(max-width:720px){.home-page.home-v38 .hero-copy-v20{display:block;position:relative;z-index:2;opacity:1;transform:none;clip-path:none}.home-page.home-v38 .hero-visual-v20{z-index:0}}
