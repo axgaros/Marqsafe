@@ -40,3 +40,28 @@
 **Decisiones del usuario confirmadas:** funcionamiento visual y funcional actual aprobado; contenido jurídico y comercial, aviso de privacidad, blog y uso de logotipos autorizados. Search Console descartado. HTTPS/SSL y redirecciones revisados previamente; no reabrir como nueva tarea de implementación. Correo \`diego@marqsafe.com\` sigue sin confirmarse. Fuente Agency se incorporará al ZIP definitivo por el titular; \`noindex,nofollow\` se retirará solamente en la entrega final para publicación. El despliegue en Hostinger sigue pendiente.
 
 **Estado de v109:** la optimización propuesta solo se considerará validada cuando el workflow marque PASS. No declarar métricas de ahorro o equivalencia visual antes de contar con el reporte.
+
+### Resultado ejecutado y verificado — v109
+
+GitHub Actions completó correctamente el workflow `Auditar y empaquetar prototipo limpio`:
+https://github.com/axgaros/Marqsafe/actions/runs/41758798511
+
+- Resultado del job: **SUCCESS**.
+- CSS fuente v108: **258,146 bytes**.
+- CSS tras la eliminación conservadora de reglas: **187,384 bytes**.
+- CSS optimizado de distribución (Lightning CSS): **164,022 bytes**.
+- Reducción neta: **94,124 bytes (36.46%)** respecto al original.
+- Reglas eliminadas mediante análisis estático: **739**.
+- JS: fuente original **sin cambios**, con verificación de sintaxis y ausencia de errores durante la prueba.
+- Comparación visual: **18 páginas × 6 anchos de pantalla × 2 versiones = 216 capturas**.
+- Resoluciones comprobadas: **360, 390, 720, 768, 1050 y 1440 px**.
+- Resultado de comparación de capturas: **0 fallos fuera de tolerancia**.
+- Errores JavaScript observados: **0**.
+- Comprobaciones adicionales: menú móvil abre/cierra; carrusel avanza; existen las seis rutas SVG de requisitos; vínculos a archivos locales presentes; un H1 por página.
+- Imágenes incluidas en ZIP: **22**.
+- Entregables del workflow: `MarqSafe-v109-prototipo-limpio` y `MarqSafe-v109-auditoria` (este último contiene `reporte-v109.json` con selectores retirados).
+- El código fuente original continúa en GitHub; `dist/` y los ZIP son generados automáticamente, no se conservan dentro del árbol fuente.
+
+**Alcance de la afirmación:** PASS confirma equivalencia visual dentro de la tolerancia y pruebas automatizadas sobre los estados medidos. No demuestra todos los estados posibles en todos los navegadores o dispositivos. No equivale a una prueba de rendimiento Core Web Vitals de producción. No se modificaron los archivos HTML ni JS aprobados.
+
+**Estado posterior:** queda pendiente confirmar `diego@marqsafe.com`, integrar Agency en el paquete definitivo por el titular, retirar `noindex,nofollow` únicamente en el ZIP final y desplegar en Hostinger. No usar Google Search Console.
