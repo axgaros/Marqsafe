@@ -14,6 +14,7 @@ const SITE = path.join(DIST, 'site');
 const ORIGINAL_CSS = path.join(ROOT, 'assets/css/styles.css');
 const ORIGINAL_JS = path.join(ROOT, 'assets/js/main.js');
 const htmlNames = (await fs.readdir(ROOT)).filter((name) => name.endsWith('.html')).sort();
+const expectedIndexable = new Set(['index.html','registro.html','viabilidad.html','oficios.html','declaracion.html','renovacion.html','aviso-comercial.html','marqsafe.html','blog.html','bloque-1.html','bloque-2.html','bloque-3.html','bloque-4.html','bloque-5.html','bloque-6.html']);
 const sourceCss = await fs.readFile(ORIGINAL_CSS, 'utf8');
 const sourceJs = await fs.readFile(ORIGINAL_JS, 'utf8');
 for (const [file, content] of [[ORIGINAL_JS, sourceJs], [ORIGINAL_CSS, sourceCss]]) {
@@ -78,6 +79,7 @@ await copyFile(ORIGINAL_JS, path.join(SITE, 'assets/js/main.js'));
 await copyFile(ORIGINAL_CSS, path.join(BASE, 'assets/css/styles.css'));
 await fs.mkdir(path.join(SITE, 'assets/css'), { recursive: true });
 await fs.writeFile(path.join(SITE, 'assets/css/styles.css'), optimizedCss, 'utf8');
+await fs.mkdir(path.join(SITE,'assets/fonts'),{recursive:true});
 
 const allowedImages = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.avif', '.gif']);
 let imagesIncluded = 0;
@@ -103,6 +105,9 @@ let h1Problems = [];
 for (const file of htmlNames) {
   const content = await fs.readFile(path.join(SITE, file), 'utf8');
   if ((content.match(/<h1\b/gi) || []).length !== 1) h1Problems.push(file);
+  const bots = content.match(/<meta[^>]*name=["']robots["'][^>]*>/gi)||[];
+  if (expectedIndexable.has(file) && (bots.length || /noindex|nofollow/i.test(content))) throw new Error('Pagina indexable bloqueada: '+file);
+  if (!expectedIndexable.has(file) && (bots.length!==1||!bots[0].includes('noindex,follow'))) throw new Error('Exclusion SEO incorrecta: '+file);
   for (const match of content.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const link = match[1];
     if (/^(?:https?:|mailto:|tel:|data:|javascript:|#|\/\/)/i.test(link)) continue;
@@ -116,7 +121,7 @@ if (localMissing.length || h1Problems.length) {
 }
 
 const report = {
-  version: 'v111',
+  version: 'v112',
   base: 'v108 commit 54c1c0a',
   approach: 'Eliminacion conservadora de reglas solo cuando todas sus alternativas exigen clases ausentes de todo el HTML y JS; minificacion de Lightning CSS sin reordenar manualmente la cascada.',
   cssOriginalBytes: Buffer.byteLength(sourceCss),
@@ -132,11 +137,12 @@ const report = {
   legalNoticeIncluded: false,
   staticLinksValidated: true,
   javascriptSyntaxValidated: true,
+  pagesWithIndexationEnabled: expectedIndexable.size,
   commentsRemovedFromWebCode: true
 };
-await fs.writeFile(path.join(DIST, 'reporte-v111.json'), JSON.stringify(report, null, 2));
+await fs.writeFile(path.join(DIST, 'reporte-v112.json'), JSON.stringify(report, null, 2));
 
-const zipPath = path.join(DIST, 'MarqSafe_v111_prototipo_limpio.zip');
+const zipPath = path.join(DIST, 'MarqSafe_v112_prototipo_limpio.zip');
 await new Promise((resolve, reject) => {
   const output = fssync.createWriteStream(zipPath);
   const zip = archiver('zip', { zlib: { level: 9 } });

@@ -109,3 +109,16 @@ Ejecución: https://github.com/axgaros/Marqsafe/actions/runs/41763456437 — res
 - Se conserva `noindex,nofollow` hasta la entrega definitiva, por lo que el diagnóstico SEO sintético de Lighthouse (~69/100) no indica que la arquitectura SEO sea deficiente; responde principalmente a la orden explícita de no indexar.
 - **Detalles de contraste según Lighthouse v110:** Home escritorio: encabezado dorado “TU MARCA, EN BUENAS MANOS” y palabra “IMPI”; Registro escritorio: palabra “IMPI” y precio “$6,500 MXN”; MarqSafe móvil: “CONFIANZA Y ACOMPAÑAMIENTO”; Blog: categorías/fechas de las tarjetas (clase `.resource-card-copy-v81 small`); Contacto móvil: “CONTACTO DIRECTO”; Aviso de privacidad móvil: números “01” a “08”. Lighthouse también marcó el texto del botón flotante de WhatsApp en algunas pruebas de escritorio; ese texto no es dorado y debe revisarse por separado si se aborda accesibilidad. No se alteraron los colores porque el usuario solo solicitó identificar las zonas.
 - Los resultados y la metodología de rendimiento de v110 siguen siendo la última auditoría sintética aprobada. La automatización de v111 repetirá el control visual y Lighthouse, sin atribuir valores numéricos a la ejecución antes de completarla.
+
+
+---
+
+## v112 — ZIP definitivo indexable para Hostinger (4 noviembre 2026)
+
+**Cambios:** en las quince páginas listadas en `sitemap.xml` se eliminó la metaetiqueta `noindex,nofollow`. En `contacto.html` y `aviso-de-privacidad.html` se sustituyó por `noindex,follow`, y `404.html` conservó `noindex,follow`. Se preservaron íntegramente textos, rutas, imágenes, CSS y JS de v111; en especial la fotografía de Diego restaurada a los atributos HTML de v109.
+
+**ZIP entregado al usuario en ChatGPT:** `MarqSafe_v112_DEFINITIVO_publicacion.zip`; 726,344 bytes comprimidos; 1,037,495 bytes descomprimidos; 45 archivos de contenido + directorio vacío `assets/fonts/`; SHA-256 `48f8926cf89ee15132f852bf255bf26b3af34bed1940d1a81f33490c96dcfad5`.
+
+**Validación estática del ZIP:** prueba de integridad ZIP, 18 HTML, 15 URLs de sitemap, 15 páginas sin `noindex` ni `nofollow`, Contacto, Privacidad y 404 con `noindex,follow`, CSS/JS originales de v111, sin comentarios en archivos HTML/CSS/JS y sin fuentes propietarias. No se ha validado este ZIP en el servidor de producción.
+
+**Instrucciones:** insertar el fichero de fuente licenciada con nombre/archivo real `assets/fonts/Agency.woff` cuando se cumpla la licencia; al recomprimir, seleccionar los archivos de la raíz y evitar una carpeta envolvente. Extraer en `public_html` del Hostinger del cliente. Confirmar HTTPS y rutas en producción. Correo `diego@marqsafe.com` pendiente de prueba. Search Console descartado. El SEO técnico se encuentra implementado, sin promesa de indexación o posicionamiento inmediato.
