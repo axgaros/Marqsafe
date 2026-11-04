@@ -1,24 +1,80 @@
-{
-  "title": "MarqSafe - Logos de marcas/clientes",
-  "purpose": "Carrusel de prueba social en Home",
-  "format": "webp",
-  "canvas": "800x800",
-  "aspect_ratio": "1:1",
-  "background": "neutral claro",
-  "items": [
-    {"id": 1, "file": "01-smash-burger.webp", "brand": "Smash Burger"},
-    {"id": 2, "file": "02-dra-lu-ortega.webp", "brand": "Dra. Lu Ortega"},
-    {"id": 3, "file": "03-doormex.webp", "brand": "Doormex"},
-    {"id": 4, "file": "04-financia-business-group.webp", "brand": "Financia Business Group"},
-    {"id": 5, "file": "05-lunika.webp", "brand": "Lunika"},
-    {"id": 6, "file": "06-yaba-soluciones-integrales.webp", "brand": "Yaba Soluciones Integrales"},
-    {"id": 7, "file": "07-mototoy-garage.webp", "brand": "Mototoy Garage"},
-    {"id": 8, "file": "08-lunhara-natural-camping.webp", "brand": "Lunhara Natural Camping"},
-    {"id": 9, "file": "09-lunya.webp", "brand": "Lunya"},
-    {"id": 10, "file": "10-turenta-mx.webp", "brand": "TuRenta.mx"},
-    {"id": 11, "file": "11-firma-mx-bienes-raices.webp", "brand": "Firma MX Bienes Raices"},
-    {"id": 12, "file": "12-perezchica.webp", "brand": "PerezChica"},
-    {"id": 13, "file": "13-pumped-bars-and-booth.webp", "brand": "Pumped - Bars and Booth"}
-  ],
-  "production_note": "Confirmar autorizacion para exhibicion publica de cada marca antes de produccion."
-}
+[
+  {
+    "n": 1,
+    "brand": "smash-burger",
+    "file": "01-smash-burger.webp",
+    "kb": 20.6
+  },
+  {
+    "n": 2,
+    "brand": "dra-lu-ortega",
+    "file": "02-dra-lu-ortega.webp",
+    "kb": 9.9
+  },
+  {
+    "n": 3,
+    "brand": "doormex",
+    "file": "03-doormex.webp",
+    "kb": 7.0
+  },
+  {
+    "n": 4,
+    "brand": "financia-business-group",
+    "file": "04-financia-business-group.webp",
+    "kb": 7.3
+  },
+  {
+    "n": 5,
+    "brand": "lunika",
+    "file": "05-lunika.webp",
+    "kb": 15.7
+  },
+  {
+    "n": 6,
+    "brand": "yaba-soluciones-integrales",
+    "file": "06-yaba-soluciones-integrales.webp",
+    "kb": 10.4
+  },
+  {
+    "n": 7,
+    "brand": "mototoy-garage",
+    "file": "07-mototoy-garage.webp",
+    "kb": 17.1
+  },
+  {
+    "n": 8,
+    "brand": "lunhara-natural-camping",
+    "file": "08-lunhara-natural-camping.webp",
+    "kb": 6.0
+  },
+  {
+    "n": 9,
+    "brand": "lunya",
+    "file": "09-lunya.webp",
+    "kb": 10.6
+  },
+  {
+    "n": 10,
+    "brand": "turenta-mx",
+    "file": "10-turenta-mx.webp",
+    "kb": 9.8
+  },
+  {
+    "n": 11,
+    "brand": "firma-mx-bienes-raices",
+    "file": "11-firma-mx-bienes-raices.webp",
+    "kb": 11.5
+  },
+  {
+    "n": 12,
+    "brand": "perezchica",
+    "file": "12-perezchica.webp",
+    "kb": 14.8
+  },
+  {
+    "n": 13,
+    "brand": "pumped-bars-and-booth",
+    "file": "13-pumped-bars-and-booth.webp",
+    "kb": 7.5
+  }
+]

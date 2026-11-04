@@ -1,9 +1,9 @@
 # DESIGN.md — MarqSafe
 
 **Estado:** contrato visual activo  
-**Última actualización:** 30 de octubre de 2026  
-**Base vigente:** v63  
-**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, Gutenberg, Patterns, responsive o motion.
+**Última actualización:** 3 de noviembre de 2026  
+**Base vigente:** v108 (sitio completo, previo a limpieza de CSS/JS)  
+**Regla:** consultar este archivo antes de modificar HTML, CSS, JS, SVG, responsive o motion.
 
 ## Arquitectura Home
 
@@ -12,7 +12,7 @@
 3. Paquetes + otros servicios.
 4. ¿Por qué registrar? + ¿Por qué MarqSafe?
 5. Oficio/requerimiento IMPI.
-6. FAQ compacta + CTA final.
+6. FAQ compacta.
 
 `Cómo funciona el registro` vive en `registro.html`, no en Home.
 
@@ -27,9 +27,19 @@ La sección usa contenido profesional real para aprovechar el ancho; no adornos 
 - eyebrow: **CONFIANZA Y ACOMPAÑAMIENTO**
 - H2: **Atención legal directa para proteger tu marca**
 - frase: **Tu trámite es atendido directamente por un abogado, con seguimiento por WhatsApp durante todo el proceso.**
-- desktop: foto profesional con marco fino navy+dorado; nombre/rol/bio/CTA; información profesional verificable.
-- mientras falten datos usar **Pendiente de información**. Nunca inventar credenciales.
+- desktop: foto profesional con marco fino navy+dorado; nombre/rol/copy/CTA; bloque “Formación y experiencia”.
+- datos públicos aprobados: Licenciatura en Derecho por la Universidad Autónoma de Guadalajara; 8 años de experiencia en propiedad intelectual; práctica en registro de marcas, oficios, declaraciones de uso y renovaciones ante el IMPI.
+- no inventar credenciales adicionales a las proporcionadas por el cliente.
 - no reintroducir sin nueva aprobación: wordmark gigante v44, MQ animado v45, silueta de abogado ni copy inventado para llenar espacio.
+
+
+## Blog v82
+
+- URL definitiva: `blog.html`; `blog.html` queda únicamente como redirección 301 histórica.
+- Seis tarjetas iniciales, todas enlazadas a artículos propios.
+- Las tarjetas conservan su composición editorial aprobada, con fotografías contextuales reales de Unsplash integradas desde v84 y guardadas localmente en WebP desde v107.
+- Cada artículo usa la plantilla editorial existente (`article-page`, `article-header`, `article-body`, `prose`) para evitar añadir CSS antes de la limpieza final.
+- Artículos iniciales: American Eagle/OVERSLEPT; Nike/7-Eleven; Michelob Ultra/Amstel Ultra; New Balance/Decathlon; IKEA/parodia política; Jack Daniel’s/Bad Spaniels.
 
 ## Carrusel de marcas
 
@@ -134,14 +144,14 @@ Kicker aprobado: **QUÉ NECESITAMOS DE TI**.
 
 No implementar todavía en el prototipo. La opción preferida a retomar es: **Google tag directa (`gtag.js`) + GA4 + Google Ads conversion tracking + Consent Mode + banner ligero propio**, sin Google Tag Manager inicialmente. Search Console queda separado como herramienta SEO sin JavaScript ni cookies en el visitante.
 
-## SEO / CRO / WordPress
+## SEO / CRO / arquitectura
 
 - un H1 único;
 - jerarquía semántica;
 - contenido real rastreable;
 - WhatsApp como conversión principal;
 - no inventar prueba social ni credenciales;
-- futuro port a Gutenberg debe mantener contenido editable sin exponer CSS/JS crítico;
+- producción: frontend estático HTML/CSS/JS desplegado directamente en hosting; no usar WordPress/Gutenberg;
 - datos repetidos como precios deben tener una sola fuente de verdad.
 
 ## Performance / accesibilidad
@@ -151,3 +161,76 @@ Priorizar SVG/WebP, JS pequeño, focus visible, teclado, contraste, targets tác
 ## Gate final
 
 > ¿Ayuda a entender, confiar, decidir o actuar; usa el espacio sin rellenarlo artificialmente; pertenece a MarqSafe; funciona en móvil y desktop; conserva SEO/CRO; es ligera, accesible y mantenible?
+
+
+## Propuesta MarqSafe v64 — pendiente de aprobación
+
+La página `marqsafe.html` se propone como una extensión editorial de la Home: hero fuerte de marca, explicación de enfoque, atención legal directa, servicios por etapa y atención remota. Esta sección no queda congelada hasta aprobación explícita del cliente/desarrollador.
+
+## Propuesta MarqSafe v66 — pendiente de aprobación
+
+- `marqsafe.html` conserva la estructura compacta de v65.
+- Hero: copy a la izquierda y recurso editorial vectorial a la derecha.
+- El recurso usa `MARQ / SAFE` sobredimensionado con el slot local `Agency`, navy/dorado, órbitas finas y escudo/check lineal.
+- Implementación inline SVG (~1.2 KB de markup), sin PNG/JPG, filtros, canvas ni librerías.
+- No congelar esta propuesta como contrato visual hasta aprobación del cliente/desarrollador.
+
+
+## Propuesta v68 — recurso México en hero MarqSafe
+- La silueta de México del hero se trazó directamente desde la referencia visual aportada por el usuario.
+- Se ignora todo texto de la imagen de referencia.
+- El contorno se simplifica a un único path SVG ligero (~1.1 KB) manteniendo Baja California, Golfo de México y Yucatán.
+- Sigue detrás de MARQ/SAFE como watermark; no compite con el arte principal.
+- No congelar en GitHub hasta aprobación visual.
+
+
+## Propuesta v68 — silueta México en hero MarqSafe
+
+- Sustituye únicamente la silueta incorrecta de v67.
+- El contorno se traza directamente desde la referencia visual proporcionada por el cliente; se ignora todo texto de la imagen.
+- Se conserva la relación de aspecto original del mapa y se simplifica a 145 vértices para reducir peso sin perder la forma reconocible.
+- MARQ/SAFE, órbitas, nodos, escudo y layout de v66 permanecen intactos.
+- Pendiente de aprobación antes de congelar esta decisión en el DESIGN.md del repositorio.
+
+
+## Cierre de páginas — v69
+
+- Se eliminan las secciones finales tipo `final-cta` de todas las páginas donde existían.
+- No sustituirlas por otro bloque promocional al final.
+- La página debe terminar en su último contenido útil y pasar directamente al footer.
+- Se mantienen intactos footer, WhatsApp flotante y CTAs contextuales dentro del contenido.
+
+
+## Propuesta v70 — Blog y MarqSafe móvil
+
+- `blog.html` y `marqsafe.html` heredan en <=720px el lenguaje móvil aprobado de Home/servicios.
+- Desktop de ambas páginas permanece intacto.
+- Blog: hero como superficie redondeada; primer artículo destacado; resto como lista editorial compacta dentro de una superficie gris suave.
+- MarqSafe: hero aprobado se conserva; Confianza/Marcas se agrupan en una superficie editorial gris; Servicios en una superficie beige cálida con filas y divisores, evitando card soup.
+- Márgenes móviles: 12 px exteriores; radios principales 28–30 px; CTAs pill existentes se conservan.
+- Pendiente de aprobación visual antes de congelar en el DESIGN.md del repositorio.
+
+
+## Candidato v71 — correcciones móviles solicitadas (pendiente de aprobación)
+
+- **Blog/`blog.html`:** la adaptación móvil de v70 queda aprobada y no se modifica.
+- **MarqSafe/`marqsafe.html`:** se corrige únicamente el hero móvil; el recurso MARQ/SAFE + México vuelve a funcionar como fondo tenue detrás del contenido, siguiendo el patrón aprobado de los heroes móviles de servicios. Desktop permanece intacto.
+- **Contacto/`contacto.html`:** la página se conserva. En móvil se compacta a hero editorial + bloque principal de WhatsApp + lista breve de accesos por servicio; se elimina la sensación de grid desktop apilado y el espacio muerto. El toast de oficios se oculta sólo en Contacto móvil por ser redundante. Desktop permanece intacto.
+- La base vigente sigue marcada como **v69** hasta que este candidato sea revisado/aprobado.
+
+
+## v103 — Artículos editoriales internos
+- Seis tarjetas del Blog conservan íntegros el layout, las fotos y los títulos, pero ahora abren seis rutas internas.
+- Diseño de página propio, editorial blanco y ligero, con jerarquía tipográfica y una columna de lectura cómoda.
+- Móvil: artículo de una columna, imagen contextual compacta y sin navegación lateral sticky.
+- No usar artículos copiados, imágenes de noticias sin licencia, ni atribuir los artículos a Diego sin aprobación.
+- Bibliografía en cada artículo y en `SOURCES.md`. La capa SEO existente mantiene `noindex,nofollow` hasta la publicación.
+
+## Blog y edición — v108
+
+- Las seis páginas conservan exactamente sus titulares, diseños de escritorio y móvil, cuerpos y fuentes aprobadas en v104–v107.
+- Solo sus nombres técnicos cambian a `bloque-1.html` ... `bloque-6.html`, siguiendo el orden de tarjetas en `blog.html`.
+- No mostrar el índice del bloque en las páginas, menús ni tarjetas.
+- Imágenes locales WebP y texto visible se mantienen, sin alteraciones estéticas.
+- Se eliminan comentarios de desarrollo de HTML, CSS, JavaScript y `.htaccess` sin consolidar ni minificar reglas.
+- No realizar optimización integral ni rediseño antes de una etapa posterior de auditoría visual/técnica.

@@ -1,0 +1,19 @@
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^recursos\.html$ https://marqsafe.com/blog.html [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
+    RewriteRule ^index\.html$ https://marqsafe.com/ [R=301,L]
+
+    RewriteCond %{HTTPS} !=on [OR]
+    RewriteCond %{HTTP_HOST} ^www\.marqsafe\.com$ [NC]
+    RewriteRule ^ https://marqsafe.com%{REQUEST_URI} [R=301,L,NE]
+    RewriteCond %{THE_REQUEST} \s/+aviso-de-privacidad\.html(?:[\s?]) [NC]
+    RewriteRule ^aviso-de-privacidad\.html$ https://marqsafe.com/aviso-de-privacidad [R=301,L]
+
+    RewriteRule ^aviso-de-privacidad/?$ aviso-de-privacidad.html [L]
+</IfModule>
