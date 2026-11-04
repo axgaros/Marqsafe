@@ -208,3 +208,13 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - Validación: 18 HTML, un H1 cada uno, sin enlaces de assets locales faltantes; 14 marcas distintas en cada carrusel; JS original v118 conservado byte por byte, sintaxis comprobada con Node; exclusiones SEO sin cambios.
 - La fuente Agency comercial no forma parte del ZIP y debe conservarse en la instalación ya publicada en Hostinger.
 - **Sin publicar:** la rama de GitHub es trabajo editorial; no fusionar hasta sincronizar también los 3 WebP binarios. El ZIP entregado sí los incluye y es funcional. La inspección visual en navegador dentro de esta sesión fue bloqueada por el entorno; la corrección de ancho se validó por cascada CSS y debe comprobarse después de desplegar.
+
+
+### v120 — Dos ajustes finales sobre v119 (4 noviembre 2026)
+
+- En el paquete Protección total ($10,000), la descripción y la lista de beneficios aclaran que se incluye la contestación de oficios **si llegan a ser requeridos por el IMPI**; no implica que necesariamente se emitan.
+- En Inicio, a escritorio >=1051px, la tercera columna de las ventajas del hero se amplía al ancho mínimo suficiente (210px, lista >=548px) para mostrar íntegra la palabra «Acompañamiento». El borde horizontal superior de la lista utiliza el mismo ancho ampliado. No se modifica ningún estilo móvil, imagen ni animación.
+- La referencia CSS de Inicio cambia `?v=119` a `?v=120` para evitar caché anterior.
+- Archivo entregable `MarqSafe_v120_Ajustes_finales_Diego.zip` creado desde el ZIP v119; 47 entradas, 775679 bytes comprimidos; SHA-256 `310b70aa1eeddeee5ffb4fb3327e29445d425b16dcc7b354f50a74ca62c6f750`.
+- La comparación binaria con v119 confirmó que **solo cambian `index.html` y `assets/css/styles.css`**. Prueba local de Chromium en anchos 1280, 1440 y 1600px: el tercer elemento ocupa la columna completa sin desbordarse del contenedor de la lista.
+- Los tres WebP nuevos aún no están sincronizados en esta rama de GitHub; el ZIP de conversación **sí los incluye**. Mantener esta rama no publicada y no fusionar a `main` hasta sincronizarlos y comprobar el despliegue. La fuente Agency se conserva en Hostinger, no se incluye en ZIP.
