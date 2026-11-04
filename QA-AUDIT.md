@@ -227,3 +227,13 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - Referencia de CSS de Inicio actualizada a `?v=121` para invalidar caché. No se retocan tamaño de letras, demás contenidos, imágenes, JavaScript, animaciones ni SEO.
 - La comparación binaria del ZIP v121 contra v120 comprueba que **solo cambiaron index.html y assets/css/styles.css**; 47 entradas intactas de estructura; ZIP 775706 bytes; SHA-256 5a7aa9310194eb8fa09b45329d30fa92eca8f065f06163c9c9e13c9f3a00c25c.
 - Mantener la fuente Agency.woff al actualizar Hostinger. Esta rama sigue sin almacenar los tres WebP nuevos; el ZIP de conversación sí los incluye y es el entregable completo.
+
+
+### v122 — Una letra más de espacio al tercer bloque de confianza del hero escritorio (4 noviembre 2026)
+
+- Base: ZIP v121 aprobado. Ajuste mínimo en escritorio >=1051px.
+- El ancho mínimo de `.home-page.home-v38 .hero-trust` pasa de 548px a **560px**, y el ancho mínimo de su tercera columna de 210px a **222px** (+12px). La línea superior usa el mismo ancho de lista, por lo que se alarga de forma proporcional. Se mantiene literalmente «Acompañamiento» y debajo «en cada paso».
+- Único cambio adicional: referencia de CSS `?v=121` -> `?v=122` en `index.html`, para evitar caché de Hostinger/navegadores. Todo lo demás sigue exactamente igual.
+- ZIP íntegro verificado: `MarqSafe_v122_Espacio_adicional_acompanamiento.zip`, 47 entradas, 775705 bytes, SHA-256 `e08da4ba6e9f9e6abe28404cef1bd47af5b101a72ead8dd1bf34f554f0d35706`.
+- Diff binario del ZIP frente a v121: solo `index.html` y `assets/css/styles.css`. No se modifica el CSS móvil, textos, JavaScript, fotos, logotipos, SEO ni estructura.
+- Los tres nuevos logos WebP están incluidos en el ZIP pero aún no están sincronizados en la rama de GitHub: no fusionar esta rama en `main` como sitio completo hasta incorporarlos. Conservar `assets/fonts/Agency.woff` instalado en Hostinger.
