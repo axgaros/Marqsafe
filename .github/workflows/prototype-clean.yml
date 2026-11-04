@@ -36,19 +36,19 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MarqSafe-v113-lighthouse
+          name: MarqSafe-v114-lighthouse
           path: dist/lighthouse/
           if-no-files-found: warn
       - name: Publicar reporte tecnico
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MarqSafe-v113-auditoria
-          path: dist/reporte-v113.json
+          name: MarqSafe-v114-auditoria
+          path: dist/reporte-v114.json
           if-no-files-found: warn
       - name: Publicar ZIP SOLO si las pruebas aprobaron
         uses: actions/upload-artifact@v4
         with:
-          name: MarqSafe-v113-prototipo-limpio
-          path: dist/MarqSafe_v113_prototipo_limpio.zip
+          name: MarqSafe-v114-prototipo-limpio
+          path: dist/MarqSafe_v114_prototipo_limpio.zip
           if-no-files-found: error

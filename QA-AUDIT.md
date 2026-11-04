@@ -144,3 +144,16 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - Lighthouse sintético en GitHub Actions: **100/100 en rendimiento y SEO para Inicio móvil**, LCP ~1.0 s, TBT 0 ms, CLS 0. No son datos de usuarios reales ni medidos en Hostinger.
 - Los artefactos v113 de prototipo, auditoría y Lighthouse están disponibles en el workflow.
 - Las pruebas simuladas no sustituyen comprobar en el dispositivo físico donde apareció el síntoma.
+
+
+---
+
+## v114 — Reversión de v113 y corrección mínima basada en v112
+
+- **Base exacta:** árbol de archivos de publicación v112 (`b32126fd03a14f329f78ab54c94441a43df0904d`). Se descartan por completo los nuevos SVG, estilos y modificaciones HTML de v113.
+- **Flechas:** únicamente se sustituyen 68 símbolos `↗` por el símbolo simple `→` ya usado en el CTA original del hero. No se añade ningún SVG o biblioteca ni se altera otro texto.
+- **Hero en móvil:** se añaden reglas CSS limitadas a `width<=720px` para mantener opacidad completa del texto y elevar en z-index los seis hijos directos del contenedor `hero-copy-v20`. Se preserva `display:contents` y toda la geometría y transparencia de la ilustración del hero v112.
+- **Cambios reales de distribución:** los 18 archivos HTML se modificaron solo en caracteres de flecha (los que no tenían no se modificaron) y `assets/css/styles.css` suma un bloque acotado. El resto de los archivos del ZIP son idénticos byte por byte a v112 (27 entradas sin modificaciones).
+- **ZIP entregado:** `MarqSafe_v114_SOLO_HERO_Y_FLECHAS.zip` generado desde el ZIP v112 de publicación; 726,835 bytes. Conserva sin cambios el SEO de publicación (15 páginas indexables).
+- **Límite de prueba:** la integridad del ZIP y la comparación binaria de los archivos no modificados fueron verificadas; la inspección visual local con Chromium estuvo bloqueada por la política de la herramienta. La comprobación definitiva de la transparencia debe realizarse en el celular físico.
+- **Fuentes:** el ZIP no distribuye `Agency.woff` por licencia; mantener el archivo ya instalado en Hostinger al actualizar.

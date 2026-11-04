@@ -1,6 +1,6 @@
 # MarqSafe — sitio web estático
 
-**Versión de trabajo:** v113 · entrega definitiva para publicación (4 de noviembre de 2026).  
+**Versión de trabajo:** v114 · entrega definitiva para publicación (4 de noviembre de 2026).  
 **Estado:** paquete final listo para instalar en Hostinger. Antes de publicarlo, el titular debe incorporar su fuente web licenciada Agency.woff; el correo corporativo sigue pendiente de prueba.
 
 ## Cómo usar
@@ -70,6 +70,6 @@ Se eliminan exclusivamente los atributos HTML `width` y `height` añadidos a la 
 
 Descargar `MarqSafe_v112_DEFINITIVO_publicacion.zip`, descomprimirlo, colocar **exclusivamente el archivo de fuente autorizado** en `assets/fonts/Agency.woff` y volver a comprimir los archivos de la raíz, no la carpeta contenedora. Extraer el contenido directamente en `public_html/`; el archivo `index.html`, `.htaccess` y `sitemap.xml` deben quedar directamente en esa raíz. El ZIP v112 conserva los HTML, JS, imágenes y estilos aprobados en v111, sin documentación de trabajo ni comentarios. **No renombrar `.woff2`, `.otf` o `.ttf` a `.woff`: deben corresponder al formato esperado o ajustarse correctamente la regla CSS.** Los documentos de investigación, diseño y auditoría permanecen solo en el repositorio. El archivo comercial de fuente jamás se incorpora al repositorio público.
 
-## v113 — Ajustes de publicación en móvil
+## v114 — Ajustes puntuales desde v112
 
-La actualización v113 corrige el apilado del hero de Inicio en vista móvil: `display:contents` impedía que el contenedor del texto fuera una capa independiente encima de la ilustración decorativa. Se recupera la caja y `z-index:2`, conservando la ilustración detrás. Se reemplazan los caracteres Unicode de flechas en enlaces/CTA de todo el sitio por un SVG lineal único de un solo trazo (`ui-arrow`), para evitar representación tipo emoji en móviles. No hay bibliotecas, imágenes externas ni cambios de texto comercial, servicios, SEO o datos del sitio. El CSS fuente de GitHub contiene las correcciones y la compilación las incorpora al ZIP sin documentos de trabajo. **El archivo de tipografía Agency no va dentro del ZIP de repositorio; el titular debe incorporarlo a la nueva entrega antes de sustituir los archivos en Hostinger, o preservar `assets/fonts/Agency.woff` del sitio ya publicado.**
+Se restaura por completo la versión de publicación v112 como base; se corrige únicamente la opacidad/superposición del texto del hero móvil y se sustituyen las flechas diagonales tipográficas por flechas sencillas ya existentes. No se incorporan iconos SVG nuevos ni cambios de diseño ajenos a estas correcciones. Para actualizar el sitio publicado, preservar la fuente Agency instalada y sustituir los archivos del paquete.
