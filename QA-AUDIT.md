@@ -133,3 +133,14 @@ Ejecución: https://github.com/axgaros/Marqsafe/actions/runs/41763456437 — res
 - **Alcance:** solo archivos HTML con flechas, CSS y documentación/código de compilación. JavaScript, logo, imágenes y SEO indexable permanecen intactos.
 - **Validación:** se realizará análisis estructural del ZIP y pruebas automatizadas del entorno de GitHub Actions. Esta versión incorpora cambios visuales deliberados, por lo que la regresión permite diferencias explícitamente acotadas en flechas y hero móvil, verificando en lugar de exigir identidad absoluta en dichos elementos. No atribuir la validación a un teléfono físico hasta comprobarla tras desplegar.
 - **Publicación y fuente:** el ZIP completo excluye `Agency.woff` por licencia; al actualizar Hostinger, conservar la fuente ya instalada o añadir el archivo comprado al ZIP antes de subir. No eliminar la carpeta de fuentes de producción.
+
+
+### Resultados verificados de v113
+
+GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/41769595361
+
+- Compilación CSS: 258,512 bytes fuente; 187,750 bytes tras poda conservadora; 164,385 bytes CSS final minificado. 739 reglas eliminadas mediante análisis estático.
+- Regresión visual automatizada: **PASS**, 18 páginas, 6 anchos de pantalla, 216 capturas, **0 fallos fuera de tolerancias**, 0 errores JS. La prueba comprueba el apilamiento del hero móvil y permite diferencias intencionales de v113.
+- Lighthouse sintético en GitHub Actions: **100/100 en rendimiento y SEO para Inicio móvil**, LCP ~1.0 s, TBT 0 ms, CLS 0. No son datos de usuarios reales ni medidos en Hostinger.
+- Los artefactos v113 de prototipo, auditoría y Lighthouse están disponibles en el workflow.
+- Las pruebas simuladas no sustituyen comprobar en el dispositivo físico donde apareció el síntoma.
