@@ -12,12 +12,6 @@
     "kb": 9.9
   },
   {
-    "n": 3,
-    "brand": "doormex",
-    "file": "03-doormex.webp",
-    "kb": 7.0
-  },
-  {
     "n": 4,
     "brand": "financia-business-group",
     "file": "04-financia-business-group.webp",
@@ -45,13 +39,7 @@
     "n": 8,
     "brand": "lunhara-natural-camping",
     "file": "08-lunhara-natural-camping.webp",
-    "kb": 6.0
-  },
-  {
-    "n": 9,
-    "brand": "lunya",
-    "file": "09-lunya.webp",
-    "kb": 10.6
+    "kb": 6
   },
   {
     "n": 10,

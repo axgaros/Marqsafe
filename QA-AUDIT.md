@@ -180,3 +180,20 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - CSS y JS con query `?v=118` en los HTML correspondientes para invalidar caché de móviles tras sustituir archivos. Todos los textos, SEO y 25 archivos de recursos no afectados son idénticos a v112.
 - **Validación:** integridad ZIP, comparación SHA256 por archivo con base v112; prueba de Chromium con HTML y recursos inyectados: contenedor del hero en móvil permanece en opacidad `1`, animación `v20-paper-in` sigue activa y flecha móvil `→` visible, diagonal oculta, sin errores JS.
 - Artefacto entregado en conversación: `MarqSafe_v118_HERO_Y_FLECHAS_MOVIL.zip`; checksum SHA-256 `72fa075fbefc891ec95762885c1a6261070ec19bd6fca82ecf902c47f88ca2a6`. Fuente Agency licenciada no incluida; preservarla al actualizar Hostinger.
+
+
+---
+
+## Observaciones de Diego — edición preliminar posterior a v118 (4 noviembre 2026)
+
+**Estado:** trabajo preparado en rama aislada `work/diego-observaciones-pendientes-imagenes`; **no fusionado ni publicado**. El sitio v118 en `main` permanece intacto hasta recibir las tres imágenes nuevas y aprobar la entrega completa.
+
+- Se reemplaza «con cerca de 8 años de experiencia» por «con 8 años de experiencia» en Inicio y MarqSafe.
+- «Áreas de práctica» queda descrita como: «Propiedad intelectual, con especialidad en registro, defensa y mantenimiento de marcas ante el IMPI.» en ambas secciones del abogado.
+- Doormex y Lunya dejan de ser referencias visibles en los dos carruseles; su registro se retira del manifiesto activo. Los archivos WebP originales se conservan provisionalmente en la rama hasta integrar los tres nuevos logotipos. Objetivo final: 14 logotipos (13 originales − 2 + 3).
+- Paquete Protección total de la Home: se añade la contestación de oficios en caso de requerimiento del IMPI, en descripción y beneficios. El precio no cambia.
+- FAQ de la Home: respuesta sobre duración del registro reemplazada literalmente por los tres párrafos aprobados por Diego.
+- Avisos de privacidad: se sustituye la mención del nombre completo del titular por «MarqSafe» en el aviso de Contacto y el aviso integral. Validar con el titular que esta identificación es jurídicamente correcta, dado que un nombre comercial puede no coincidir con el responsable legal del tratamiento.
+- Búsqueda y viabilidad: se elimina «incluye derechos del IMPI» del precio sin cambiar el importe de $1,000.
+- Queda pendiente recibir tres imágenes, optimizarlas a WebP, incorporarlas y revisar el carrusel/estructura en todas las vistas. No se modificaron CSS, JavaScript, fotografía de Diego ni páginas ajenas a las observaciones.
+- Antes de fusionar: contrastar copia HTML/manifest, verificar 14 logotipos, navegación, y empaquetar ZIP limpio preservando la fuente Agency ya instalada en Hostinger.
