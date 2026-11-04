@@ -237,3 +237,13 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - ZIP íntegro verificado: `MarqSafe_v122_Espacio_adicional_acompanamiento.zip`, 47 entradas, 775705 bytes, SHA-256 `e08da4ba6e9f9e6abe28404cef1bd47af5b101a72ead8dd1bf34f554f0d35706`.
 - Diff binario del ZIP frente a v121: solo `index.html` y `assets/css/styles.css`. No se modifica el CSS móvil, textos, JavaScript, fotos, logotipos, SEO ni estructura.
 - Los tres nuevos logos WebP están incluidos en el ZIP pero aún no están sincronizados en la rama de GitHub: no fusionar esta rama en `main` como sitio completo hasta incorporarlos. Conservar `assets/fonts/Agency.woff` instalado en Hostinger.
+
+
+### v124 — Corrección del recorte real sin redistribuir ventajas del hero (4 noviembre 2026)
+
+- **Base exacta:** versión v122, con rechazo de los cambios de ancho de v123. En escritorio (>=1051px), las dos primeras ventajas del hero («Atención en todo México» y «Derechos del IMPI incluidos») conservan posiciones, columnas y dimensiones originales; también se conserva el inicio horizontal de «Acompañamiento».
+- **Causa raíz confirmada:** `.motion-ready .reveal.is-visible` aplicaba `clip-path:inset(0)` sobre el contenedor de copia del hero; el texto de la tercera columna quedaba recortado en el borde de ese contenedor, aunque el grid se ampliara. Solo cuando el contenedor de copia de Inicio llega a estado visible en escritorio se extiende el recorte a la derecha con `clip-path:inset(0 -600px 0 0)`, preservando la transición de entrada.
+- **Ajuste local:** en escritorio, el ancho de la tercera tarjeta crece 140px hacia la derecha sin cambiar tracks ni distribución. El pseudo-elemento de la línea superior extiende 140px la línea de la lista. «Acompañamiento» se muestra completo, «en cada paso» queda en la segunda línea.
+- **Pruebas en Chromium:** a 1051, 1280, 1440 y 1600px se midieron geométricamente los dos primeros bloques, y todos sus x/y/ancho/alto fueron idénticos a v122; el tercero es 140px más ancho y el recorte del contenedor llega a -600px al terminar la animación. A 375, 720 y 1024px las geometrías relevantes no cambiaron respecto a v122. Se realizó además simulación de una fuente más ancha, sin cortes.
+- **ZIP completo:** `MarqSafe_v124_Acompanamiento_corregido_sin_mover_bloques.zip`, 47 entradas, 775805 bytes, SHA-256 `013a06beec47fb429c4b2489c5c6c635f1607d895e17ad3c92f823dfe9da57c8`. Comparación binaria v122→v124: únicamente cambian `index.html` y `assets/css/styles.css`.
+- **Entrega:** conserva los 14 logotipos y excluye Agency.woff por licencia. Mantener fuente en Hostinger. Esta rama de GitHub todavía no incluye los tres WebP recientes; no fusionar a `main` como paquete completo hasta sincronizarlos.
