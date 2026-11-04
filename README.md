@@ -1,6 +1,6 @@
 # MarqSafe — sitio web estático
 
-**Versión de trabajo:** v115 · entrega definitiva para publicación (4 de noviembre de 2026).  
+**Versión de trabajo:** v118 · entrega definitiva para publicación (4 de noviembre de 2026).  
 **Estado:** paquete final listo para instalar en Hostinger. Antes de publicarlo, el titular debe incorporar su fuente web licenciada Agency.woff; el correo corporativo sigue pendiente de prueba.
 
 ## Cómo usar
@@ -74,3 +74,7 @@ Descargar `MarqSafe_v112_DEFINITIVO_publicacion.zip`, descomprimirlo, colocar **
 ## v115 — Corrección móvil puntual desde v112
 
 El símbolo ↗ se conserva con selector U+FE0E para impedir representación emoji, incluyendo los pseudo-elementos de tarjetas de servicios y contacto. Solo se fuerza opacidad/capa de texto en el hero móvil, sin alterar la transparencia del recurso gráfico. El ZIP v115 no distribuye Agency.woff: preservar el archivo web ya instalado al actualizar Hostinger. Ver QA-AUDIT.md para el diff verificado.
+
+## v118 — Reparación del hero móvil y flechas
+
+Se parte de v112. El hero móvil conserva todas sus animaciones: solo se corrige la activación de visibilidad de su contenedor `display: contents`. Los enlaces muestran ↗ en escritorio y → en móvil. Antes de reemplazar archivos en Hostinger, preservar el archivo licenciado Agency.woff. Revisar `QA-AUDIT.md` para resultados y cambios.

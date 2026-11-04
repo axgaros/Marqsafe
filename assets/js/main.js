@@ -42,6 +42,11 @@
   updateScrollUI();
   window.addEventListener('scroll', updateScrollUI, { passive: true });
 
+  if (window.matchMedia('(max-width: 720px)').matches) {
+    const heroCopy = document.querySelector('.home-page .hero-copy-v20.reveal');
+    if (heroCopy) requestAnimationFrame(() => requestAnimationFrame(() => heroCopy.classList.add('is-visible')));
+  }
+
   const revealElements = document.querySelectorAll('.reveal');
 
   if (!reducedMotion && 'IntersectionObserver' in window) {

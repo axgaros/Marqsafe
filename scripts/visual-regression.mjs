@@ -87,7 +87,7 @@ try {
   await browser.close();
   await Promise.all(servers.map(({ server }) => new Promise((resolve) => server.close(resolve))));
 }
-const reportFile = path.join(dist, 'reporte-v112.json');
+const reportFile = path.join(dist, 'reporte-v118.json');
 const report = JSON.parse(await fs.readFile(reportFile, 'utf8'));
 report.visualRegression = { pagesChecked: pages.length, widths, screenshots, failures, jsErrors, status: failures.length || jsErrors.length ? 'FAILED' : 'PASS' };
 await fs.writeFile(reportFile, JSON.stringify(report, null, 2));

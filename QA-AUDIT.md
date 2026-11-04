@@ -168,3 +168,15 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - **Hero móvil:** solo a anchuras <=720 px, elevar hijos directos del contenedor `hero-copy-v20` con `z-index:5`, forzar `opacity:1` y `mix-blend-mode:normal`, mantener la ilustración en `z-index:0` y forzar el texto del contenedor `reveal` a opacidad completa. Conservar el original `display:contents` y todas las dimensiones, posiciones e imagen de fondo del hero v112.
 - **Entrega ChatGPT:** `MarqSafe_v115_FLECHA_TEXTO_HERO_OPACO.zip`, tamaño 726,905 bytes, SHA-256 `498117b8e99a7a9b3f50ac5f4254e5608432d4838d71b052ac830e2f38632c2c`; 45 archivos; 26 sin cambio byte a byte; solo 18 HTML y CSS alterados.
 - **Pruebas:** integridad del ZIP, equivalencia exacta de archivos no afectados, 18 HTML y flechas tipográficas correctas. No se pudo ejecutar Chromium local por bloqueo de la plataforma; NO afirmar todavía comprobación en teléfono físico. Validar en el móvil después de reemplazar el CSS y limpiar caché. El sitio sigue indexable y la fuente Agency comprada se mantiene fuera del ZIP.
+
+
+---
+
+## v118 — Corregido desde v112: observación del hero móvil y flechas horizontales
+
+- Base del **sitio web**: commit v112 `b32126fd03a14f329f78ab54c94441a43df0904d`. Se abandonan todas las modificaciones del código de v113–v115.
+- **Causa verificada en Chromium móvil:** `.hero-copy-v20` usa `display:contents`; su clase `reveal` nunca recibe `is-visible` desde IntersectionObserver porque no genera caja observable. Con `motion-ready`, la opacidad calculada caía a 0. Se agrega solo una activación `requestAnimationFrame` doble en móvil para poner la clase `is-visible`, conservando las transiciones y animaciones originales, incluido el SVG.
+- **Flechas:** las 62 marcas `↗` de spans existentes mantienen la diagonal en escritorio y muestran `→` únicamente a <=720px. Pseudoelementos móviles de tarjetas de servicios y de Contacto muestran `→` en ese breakpoint. El resto del diseño permanece igual.
+- CSS y JS con query `?v=118` en los HTML correspondientes para invalidar caché de móviles tras sustituir archivos. Todos los textos, SEO y 25 archivos de recursos no afectados son idénticos a v112.
+- **Validación:** integridad ZIP, comparación SHA256 por archivo con base v112; prueba de Chromium con HTML y recursos inyectados: contenedor del hero en móvil permanece en opacidad `1`, animación `v20-paper-in` sigue activa y flecha móvil `→` visible, diagonal oculta, sin errores JS.
+- Artefacto entregado en conversación: `MarqSafe_v118_HERO_Y_FLECHAS_MOVIL.zip`; checksum SHA-256 `72fa075fbefc891ec95762885c1a6261070ec19bd6fca82ecf902c47f88ca2a6`. Fuente Agency licenciada no incluida; preservarla al actualizar Hostinger.
