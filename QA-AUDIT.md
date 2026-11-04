@@ -218,3 +218,12 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - Archivo entregable `MarqSafe_v120_Ajustes_finales_Diego.zip` creado desde el ZIP v119; 47 entradas, 775679 bytes comprimidos; SHA-256 `310b70aa1eeddeee5ffb4fb3327e29445d425b16dcc7b354f50a74ca62c6f750`.
 - La comparación binaria con v119 confirmó que **solo cambian `index.html` y `assets/css/styles.css`**. Prueba local de Chromium en anchos 1280, 1440 y 1600px: el tercer elemento ocupa la columna completa sin desbordarse del contenedor de la lista.
 - Los tres WebP nuevos aún no están sincronizados en esta rama de GitHub; el ZIP de conversación **sí los incluye**. Mantener esta rama no publicada y no fusionar a `main` hasta sincronizarlos y comprobar el despliegue. La fuente Agency se conserva en Hostinger, no se incluye en ZIP.
+
+
+### v121 — Salto de línea puntual en la tercera ventaja del hero de Inicio (4 noviembre 2026)
+
+- Base exacta: ZIP v120 aprobado.
+- Texto de escritorio en tres ventajas: `Acompañamiento` en la primera línea, `en cada paso` en la segunda, mediante un span anidado y `display:block` **solo a partir de 1051 px**. En móviles no se altera el comportamiento.
+- Referencia de CSS de Inicio actualizada a `?v=121` para invalidar caché. No se retocan tamaño de letras, demás contenidos, imágenes, JavaScript, animaciones ni SEO.
+- La comparación binaria del ZIP v121 contra v120 comprueba que **solo cambiaron index.html y assets/css/styles.css**; 47 entradas intactas de estructura; ZIP 775706 bytes; SHA-256 5a7aa9310194eb8fa09b45329d30fa92eca8f065f06163c9c9e13c9f3a00c25c.
+- Mantener la fuente Agency.woff al actualizar Hostinger. Esta rama sigue sin almacenar los tres WebP nuevos; el ZIP de conversación sí los incluye y es el entregable completo.
