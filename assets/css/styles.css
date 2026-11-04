@@ -6993,4 +6993,6 @@ body{background:#fff}
   }
 }
 
-@media (width<=720px){.home-page.home-v38 .hero-copy-v20.reveal{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}.home-page.home-v38 .hero-copy-v20>.hero-overline,.home-page.home-v38 .hero-copy-v20>h1,.home-page.home-v38 .hero-copy-v20>.hero-lead,.home-page.home-v38 .hero-copy-v20>.hero-price-v38,.home-page.home-v38 .hero-copy-v20>.hero-actions-v20,.home-page.home-v38 .hero-copy-v20>.hero-trust{position:relative;z-index:2;opacity:1}}
+@media(max-width:720px){.home-page.home-v38 .hero-v20>.hero-copy-v20>*{position:relative;z-index:5;opacity:1!important;mix-blend-mode:normal!important;filter:none!important}.home-page.home-v38 .hero-v20>.hero-visual-v20{z-index:0;pointer-events:none}.home-page.home-v38 .hero-copy-v20.reveal{opacity:1!important;clip-path:none!important;transform:none!important;transition:none!important}}
+.arrow-text{font-family:Arial,'Segoe UI Symbol','Apple Symbols',sans-serif;font-variant-emoji:text;font-style:normal}
+@media(max-width:720px){.home-page .service-compact:after,.contact-mobile-v71 .contact-service-card span:after{content:'↗︎';font-family:Arial,'Segoe UI Symbol','Apple Symbols',sans-serif;font-variant-emoji:text;font-style:normal}}

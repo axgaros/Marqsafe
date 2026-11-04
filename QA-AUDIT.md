@@ -157,3 +157,14 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - **ZIP entregado:** `MarqSafe_v114_SOLO_HERO_Y_FLECHAS.zip` generado desde el ZIP v112 de publicación; 726,835 bytes. Conserva sin cambios el SEO de publicación (15 páginas indexables).
 - **Límite de prueba:** la integridad del ZIP y la comparación binaria de los archivos no modificados fueron verificadas; la inspección visual local con Chromium estuvo bloqueada por la política de la herramienta. La comprobación definitiva de la transparencia debe realizarse en el celular físico.
 - **Fuentes:** el ZIP no distribuye `Agency.woff` por licencia; mantener el archivo ya instalado en Hostinger al actualizar.
+
+
+---
+
+## v115 — Restauración de la flecha ↗ como texto y texto del hero móvil opaco (4 de noviembre de 2026)
+
+- **Base de publicación:** v112 (commit `b32126fd03a14f329f78ab54c94441a43df0904d`); se descartan completamente las intervenciones de v113 y v114 en HTML/CSS.
+- **Flechas:** conservar `↗` y adjuntar selector Unicode `U+FE0E` de presentación textual (↗︎) a las 68 ocurrencias de los 18 HTML. Los 62 iconos envueltos en spans reciben clase `arrow-text` y tipografía de símbolos sin emoji. Se corrigen también ambos pseudo-elementos CSS móviles (`service-compact:after` y `contact-service-card span:after`) que generaban caracteres sin selector de texto.
+- **Hero móvil:** solo a anchuras <=720 px, elevar hijos directos del contenedor `hero-copy-v20` con `z-index:5`, forzar `opacity:1` y `mix-blend-mode:normal`, mantener la ilustración en `z-index:0` y forzar el texto del contenedor `reveal` a opacidad completa. Conservar el original `display:contents` y todas las dimensiones, posiciones e imagen de fondo del hero v112.
+- **Entrega ChatGPT:** `MarqSafe_v115_FLECHA_TEXTO_HERO_OPACO.zip`, tamaño 726,905 bytes, SHA-256 `498117b8e99a7a9b3f50ac5f4254e5608432d4838d71b052ac830e2f38632c2c`; 45 archivos; 26 sin cambio byte a byte; solo 18 HTML y CSS alterados.
+- **Pruebas:** integridad del ZIP, equivalencia exacta de archivos no afectados, 18 HTML y flechas tipográficas correctas. No se pudo ejecutar Chromium local por bloqueo de la plataforma; NO afirmar todavía comprobación en teléfono físico. Validar en el móvil después de reemplazar el CSS y limpiar caché. El sitio sigue indexable y la fuente Agency comprada se mantiene fuera del ZIP.
