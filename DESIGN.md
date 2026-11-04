@@ -35,7 +35,7 @@ La sección usa contenido profesional real para aprovechar el ancho; no adornos 
 
 ## Blog v82
 
-- URL definitiva: `blog.html`; `blog.html` queda únicamente como redirección 301 histórica.
+- URL definitiva del listado: `blog.html`; la ruta histórica `recursos.html` redirige por 301 a `blog.html`.
 - Seis tarjetas iniciales, todas enlazadas a artículos propios.
 - Las tarjetas conservan su composición editorial aprobada, con fotografías contextuales reales de Unsplash integradas desde v84 y guardadas localmente en WebP desde v107.
 - Cada artículo usa la plantilla editorial existente (`article-page`, `article-header`, `article-body`, `prose`) para evitar añadir CSS antes de la limpieza final.
@@ -142,7 +142,7 @@ Kicker aprobado: **QUÉ NECESITAMOS DE TI**.
 
 ## Medición / marketing — decisión en pausa
 
-No implementar todavía en el prototipo. La opción preferida a retomar es: **Google tag directa (`gtag.js`) + GA4 + Google Ads conversion tracking + Consent Mode + banner ligero propio**, sin Google Tag Manager inicialmente. Search Console queda separado como herramienta SEO sin JavaScript ni cookies en el visitante.
+No implementar todavía en el prototipo. La opción preferida a retomar es: **Google tag directa (`gtag.js`) + GA4 + Google Ads conversion tracking + Consent Mode + banner ligero propio**, sin Google Tag Manager inicialmente. Google Search Console queda descartado por decisión del cliente/desarrollador; no proponer su implementación.
 
 ## SEO / CRO / arquitectura
 
@@ -234,3 +234,18 @@ La página `marqsafe.html` se propone como una extensión editorial de la Home: 
 - Imágenes locales WebP y texto visible se mantienen, sin alteraciones estéticas.
 - Se eliminan comentarios de desarrollo de HTML, CSS, JavaScript y `.htaccess` sin consolidar ni minificar reglas.
 - No realizar optimización integral ni rediseño antes de una etapa posterior de auditoría visual/técnica.
+
+
+## Confirmaciones del 3 de noviembre de 2026 — prevalecen sobre pendientes anteriores
+
+- Diseño y funcionalidad de la versión v108 aprobados por el desarrollador; no reabrir pruebas previamente aceptadas como si fueran tareas pendientes de contenido.
+- Los textos jurídicos, precios y contenido comercial están aprobados; el aviso de privacidad se conserva tal como está a petición expresa del cliente/desarrollador, incluso si describe herramientas que se integrarán más adelante.
+- Los 13 logotipos y los seis artículos editoriales fueron aprobados/autorizados. No volver a solicitarlos sin un cambio real.
+- El correo `diego@marqsafe.com` sigue pendiente de confirmar.
+- La fuente Agency se integrará por el titular al preparar la entrega definitiva; nunca subir sus archivos a un repositorio público.
+- Search Console NO se instalará. Tampoco integrar analítica/Ads hasta que el cliente lo solicite.
+- No volver a tratar las redirecciones como una implementación pendiente: fueron revisadas previamente. La comprobación del servidor de producción y SSL automático se hará durante el despliegue, sin suponer que el certificado esté operativo antes de publicar.
+- La retirada de `noindex,nofollow` solo se hará en el ZIP definitivo de publicación, no en los prototipos.
+- Los ZIP de prototipo contienen únicamente archivos de sitio imprescindibles y avisos de terceros exigibles. La documentación, auditorías, fuentes de referencia y scripts permanecen en GitHub.
+- `QA-AUDIT.md` debe seguir como registro histórico **acumulativo**, agregando una sección por versión.
+- Optimización de CSS/JS: cualquier regla retirada exige justificación y verificación de no regresión visual/funcional. No aplicar un purgador agresivo por ausencia de un selector en el HTML.

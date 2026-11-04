@@ -41,12 +41,12 @@ El dominio canónico definido es `https://marqsafe.com/`. Las páginas editorial
 ## Pendientes antes de publicación
 
 1. Confirmar que `diego@marqsafe.com` envía y recibe correo.
-2. Confirmar con Diego el texto legal sobre cookies, publicidad y terceros; aprobar textos jurídicos, artículos, servicios y precios.
-3. Confirmar autorización para mostrar públicamente los logotipos de clientes.
-4. Probar menú, carrusel, CTA WhatsApp, artículos y rutas animadas en dispositivos reales; revisar expresamente Viabilidad en escritorio y móvil.
-5. Incorporar la fuente Agency **solo si el titular aporta la versión web licenciada adecuada**. Nunca incluir el archivo de fuente en un repositorio público sin verificar el permiso de distribución.
-6. Ejecutar el trabajo separado de limpieza/optimización de CSS/JS, junto con pruebas de regresión. CSS actual permanece sin minificar.
-7. Retirar `noindex,nofollow` y desplegar; confirmar SSL, respuestas HTTP, redirecciones, favicon, sitemap y robots en Hostinger.
+2. Los textos jurídicos, artículos, servicios, precios y aviso de privacidad están aprobados. Conservar el aviso tal como se acordó; la analítica/Ads no está todavía instalada.
+3. Los trece logotipos de clientes ya cuentan con autorización; no volver a solicitarla.
+4. El desarrollador ha validado el funcionamiento visual y funcional vigente. Una optimización futura debe comprobar que no cambia ese comportamiento (pruebas de regresión, no repetición de aprobación).
+5. El titular integrará la fuente Agency licenciada únicamente al preparar el ZIP final para subir a Hostinger; nunca incluirla en el repositorio público.
+6. Ejecutar/verificar la limpieza de CSS mediante el pipeline reproducible de v109, con comparación visual y registro de métricas; el CSS original permanece intacto hasta demostrar seguridad.
+7. Retirar `noindex,nofollow` solamente en el ZIP definitivo y desplegar en Hostinger; verificar que SSL automático y configuración del servidor funcionen al publicarse. Las reglas de redirección ya fueron revisadas. No integrar Search Console.
 
 ## Documentación
 
@@ -55,7 +55,7 @@ El dominio canónico definido es `https://marqsafe.com/`. Las páginas editorial
 - `SOURCES.md`: referencias legales, noticias, fotografías y atribución de glifos.
 - `QA-AUDIT.md`: validación estructural y pendientes de pruebas visuales.
 
-Las páginas y fuentes de información no se deben atribuir personalmente a Diego sin su aprobación. La optimización y auditoría final de CSS/JS son una etapa posterior.
+Los artículos conservan su autoría institucional sin atribución personal arbitraria. La optimización CSS/JS exige pruebas de regresión antes de declarar resultados; no modificar diseños aprobados.
 
 
 ## Entregables limpios a partir de v109
