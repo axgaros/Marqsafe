@@ -1,0 +1,45 @@
+name: Auditar y empaquetar prototipo limpio
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'assets/**'
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/prototype-clean.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar herramientas de auditoria
+        run: npm install --no-package-lock
+      - name: Instalar Chromium para comparacion visual
+        run: npx playwright install --with-deps chromium
+      - name: Depurar CSS y construir ZIP sin documentos de desarrollo
+        run: npm run build:prototype
+      - name: Comparacion visual y pruebas de regresion
+        run: npm run test:regression
+      - name: Publicar reporte tecnico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MarqSafe-v109-auditoria
+          path: dist/reporte-v109.json
+          if-no-files-found: warn
+      - name: Publicar ZIP SOLO si las pruebas aprobaron
+        uses: actions/upload-artifact@v4
+        with:
+          name: MarqSafe-v109-prototipo-limpio
+          path: dist/MarqSafe_v109_prototipo_limpio.zip
+          if-no-files-found: error

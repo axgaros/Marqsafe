@@ -56,3 +56,8 @@ El dominio canónico definido es `https://marqsafe.com/`. Las páginas editorial
 - `QA-AUDIT.md`: validación estructural y pendientes de pruebas visuales.
 
 Las páginas y fuentes de información no se deben atribuir personalmente a Diego sin su aprobación. La optimización y auditoría final de CSS/JS son una etapa posterior.
+
+
+## Entregables limpios a partir de v109
+
+La documentación de trabajo SIEMPRE permanece en GitHub (README, DESIGN, ARCHITECTURE, QA-AUDIT, SOURCES, docs y scripts). **No se incluye en los ZIP de prototipo.** El archivo \`QA-AUDIT.md\` mantiene secciones acumulativas por versión. El workflow \`.github/workflows/prototype-clean.yml\` crea un ZIP de archivos funcionales y comprueba el resultado visual frente a la versión base antes de publicarlo como artefacto descargable. El código HTML/JS aprobado sigue intacto y la optimización de CSS se realiza en una copia de distribución. El ZIP conserva \`noindex,nofollow\` hasta la entrega definitiva.
