@@ -81,3 +81,19 @@ https://github.com/axgaros/Marqsafe/actions/runs/41758798511
 **Aclaración de metodología:** la regresión de v109 fue positiva (216 capturas, PASS). La v110 añade terminología y dimensiones intrínsecas. El workflow valida otra vez todo el sitio y ejecuta Lighthouse sobre una muestra representativa de páginas en móvil y escritorio. Los informes se publican como artefactos del workflow; **no afirmar métricas Lighthouse definitivas hasta consultar el resultado real**. Las condiciones de GitHub Actions no representan el rendimiento real del sitio hasta publicarlo en Hostinger.
 
 **Próximos pasos de producción:** comprobar correo `diego@marqsafe.com`; integrar Agency licenciada por el titular en la entrega definitiva; retirar `noindex,nofollow` de páginas indexables solamente al publicar; desplegar en Hostinger. Search Console descartado. No reabrir el texto legal, blog ni autorizaciones ya aprobadas.
+
+
+### Verificación ejecutada de v110 — GitHub Actions
+
+Ejecución: https://github.com/axgaros/Marqsafe/actions/runs/41763456437 — resultado **SUCCESS**.
+
+- **Regresión:** PASS; 216 capturas comparadas en 18 páginas y 6 anchuras (360, 390, 720, 768, 1050, 1440 px); 0 diferencias fuera de tolerancia, 0 errores JavaScript.
+- **CSS:** 258,146 bytes originales; 164,022 bytes de distribución optimizada; eliminación conservadora de 739 reglas. JavaScript sin modificaciones.
+- **Lighthouse sintético:** 12 páginas móviles (rendimiento 99–100/100, mediana 100) y 3 escritorio (100/100). LCP mediano móvil 0.96 s y rango desktop 0.25–0.67 s; TBT 0 ms y CLS 0 en las 15 ejecuciones.
+- **Accesibilidad:** 95–100/100. Hay textos dorados de contraste insuficiente en MarqSafe, Blog, Contacto y numeración del aviso. No se cambia visual aprobado sin autorización.
+- **Buenas prácticas:** 96/100 por solicitud 404 del archivo `assets/fonts/Agency.woff`, deliberadamente ausente hasta la entrega final con fuente licenciada.
+- **SEO:** 69/100 por `noindex,nofollow` intencional del prototipo. No confundir con SEO final publicado.
+- **CSS sin uso en vista de cada página:** Lighthouse estima 19–26 KiB, aunque el CSS es global y sirve múltiples páginas. No dividir estilos por ruta sin demostrar beneficio neto y ausencia de regresiones.
+- **ZIP validado:** 45 archivos funcionales, 1,038,273 bytes descomprimidos; ZIP directo de entrega 726,559 bytes. Sin `AVISOS-DE-TERCEROS.txt`, Markdown o herramientas de desarrollo. Créditos y condiciones permanecen en `SOURCES.md` del repositorio.
+- **Integridad:** las cuatro páginas modificadas localmente (`contacto.html`, `aviso-de-privacidad.html`, `index.html`, `marqsafe.html`) coinciden byte por byte con el ZIP generado en GitHub. No se detectaron comentarios de desarrollo en HTML/CSS/JS del prototipo.
+- **Límite:** Lighthouse se ejecutó contra servidor local en GitHub Actions con gzip y caché simulada; no mide latencia de Hostinger, Core Web Vitals de usuarios, ni comportamiento de la futura fuente Agency.
