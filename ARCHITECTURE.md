@@ -35,3 +35,11 @@
 - El CSS conserva su estructura histórica; su auditoría y refactor quedan para la siguiente etapa.
 - Solo añadir credenciales, reseñas o declaraciones legales verificadas y aprobadas por el cliente.
 - Ajustar avisos legales y autorización de logos antes del lanzamiento.
+
+
+## Actualización v125 / preparación v126 (12 noviembre 2026)
+
+- Base vigente y aprobada: v125 del sitio estático; ninguna dependencia de WordPress ni backend.
+- La instrumentación posterior se plantea en una rama distinta mediante módulos aislados `assets/js/consent.js`, `consent-ui.js`, `measurement.js` y `assets/css/consent.css`.
+- Google tag directo con GA4 `G-43GTZJT6RM` y Ads `AW-18569645801`; conversión WhatsApp `AW-18569645801/1mvzCJCewbYdEOmd2ZZF`.
+- Los clics internos a Contacto no se convierten automáticamente; el enlace administrativo de privacidad debe excluirse de la conversión comercial.

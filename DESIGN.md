@@ -249,3 +249,11 @@ La página `marqsafe.html` se propone como una extensión editorial de la Home: 
 - Los ZIP de prototipo contienen únicamente archivos de sitio imprescindibles y avisos de terceros exigibles. La documentación, auditorías, fuentes de referencia y scripts permanecen en GitHub.
 - `QA-AUDIT.md` debe seguir como registro histórico **acumulativo**, agregando una sección por versión.
 - Optimización de CSS/JS: cualquier regla retirada exige justificación y verificación de no regresión visual/funcional. No aplicar un purgador agresivo por ausencia de un selector en el HTML.
+
+
+## v125 congelada y reglas de v126 (12 noviembre 2026)
+
+- El ZIP v125 aprobado sustituye las referencias históricas a v108/v118 como fuente de verdad visual.
+- En la integración v126 no tocar `assets/css/styles.css`, `assets/js/main.js`, textos jurídicos, imágenes, animaciones, copy ni href de WhatsApp.
+- El consentimiento se implementa por componentes separados; la interfaz de preferencias debe evitar saltos involuntarios de scroll y conservar accesibilidad en móvil/escritorio.
+- La instalación se mantiene como candidata hasta la verificación de Google Tag Assistant/GA4/Ads. No publicar en producción antes de esas comprobaciones.

@@ -180,3 +180,13 @@ GitHub Actions **SUCCESS**: https://github.com/axgaros/Marqsafe/actions/runs/417
 - CSS y JS con query `?v=118` en los HTML correspondientes para invalidar caché de móviles tras sustituir archivos. Todos los textos, SEO y 25 archivos de recursos no afectados son idénticos a v112.
 - **Validación:** integridad ZIP, comparación SHA256 por archivo con base v112; prueba de Chromium con HTML y recursos inyectados: contenedor del hero en móvil permanece en opacidad `1`, animación `v20-paper-in` sigue activa y flecha móvil `→` visible, diagonal oculta, sin errores JS.
 - Artefacto entregado en conversación: `MarqSafe_v118_HERO_Y_FLECHAS_MOVIL.zip`; checksum SHA-256 `72fa075fbefc891ec95762885c1a6261070ec19bd6fca82ecf902c47f88ca2a6`. Fuente Agency licenciada no incluida; preservarla al actualizar Hostinger.
+
+
+---
+
+## v125 — Restauración del ZIP visual aprobado (12 noviembre 2026)
+
+- Fuente: ZIP entregado por el desarrollador `MarqSafe_v125_CORTE_EXACTO_LINEA_HERO (1).zip`, SHA-256 `bef6da8db5b9b76094a1df81783e2fb63202d184b6b7867a7396d0efa1d518fe`.
+- Se restauraron los archivos del sitio a partir del ZIP sin alterar la fuente local. Se conserva el resto de la documentación del repositorio; los archivos de fuentes propietarios no se agregan.
+- Base: 18 HTML; 29 enlaces WhatsApp; JavaScript visual original; CSS aprobado con el recorte específico de la línea del hero.
+- La v126 (Google tag, GA4, Google Ads y consentimiento) es una implementación posterior y todavía requiere validación de eventos y de la configuración real de las cuentas de Google. No interpretar la actualización de GitHub como publicación en Hostinger ni como certificación de conversiones.

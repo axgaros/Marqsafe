@@ -78,3 +78,8 @@ El símbolo ↗ se conserva con selector U+FE0E para impedir representación emo
 ## v118 — Reparación del hero móvil y flechas
 
 Se parte de v112. El hero móvil conserva todas sus animaciones: solo se corrige la activación de visibilidad de su contenedor `display: contents`. Los enlaces muestran ↗ en escritorio y → en móvil. Antes de reemplazar archivos en Hostinger, preservar el archivo licenciado Agency.woff. Revisar `QA-AUDIT.md` para resultados y cambios.
+
+
+## Estado aprobado v125 — 12 noviembre 2026
+
+La fuente de verdad visual y funcional es el ZIP aprobado `MarqSafe_v125_CORTE_EXACTO_LINEA_HERO.zip` (SHA-256: `bef6da8db5b9b76094a1df81783e2fb63202d184b6b7867a7396d0efa1d518fe`). Su contenido web ha sido restaurado en `main` desde ese ZIP. v125 conserva HTML/CSS/JS estático, 18 páginas HTML, 29 enlaces WhatsApp y el hero aprobado. No contiene instrumentación de Analytics o Ads. La fuente comercial Agency.woff sigue excluida del repositorio. El candidato de instrumentación v126 se trabaja por separado, no en `main`, hasta validar medición, consentimiento y QA.
